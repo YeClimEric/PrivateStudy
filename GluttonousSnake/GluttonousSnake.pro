@@ -13,8 +13,13 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    food.cpp \
+    gamecontroller.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    food.h \
+    common.h \
+    gamecontroller.h
 
 FORMS    += mainwindow.ui
