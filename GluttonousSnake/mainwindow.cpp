@@ -15,14 +15,15 @@ MainWindow::MainWindow(QWidget *parent) :
     game(new GameController(scene, this))
 {
     //ui->setupUi(this);
-    setCentralWidget(view);
-    resize(600, 600);
-    initScene();
-    initSceneBackground();
-    setWindowTitle("Gluttonous Snake");
+//    setCentralWidget(view);
+//    resize(600, 600);
+//    initScene();
+//    initSceneBackground();
+//    setWindowTitle("Gluttonous Snake");
 
-    //call Slot
-    QTimer::singleShot(0, this, SLOT(adjustViewSize()));
+//    //call Slot
+//    QTimer::singleShot(0, this, SLOT(adjustViewSize()));
+//    setWindowFlags();
 }
 
 MainWindow::~MainWindow()
