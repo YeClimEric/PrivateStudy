@@ -2,14 +2,12 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include<QLineEdit>
-#include <QTextEdit>
-#include <QPlainTextEdit>
-#include <QComboBox>
-#include <QFontComboBox>
+#include <QLabel>
+#include <QListWidget>
+
+#include <QStyledItemDelegate>
 #include <QSpinBox>
-#include <QHBoxLayout>
-#include <QRadioButton>
+
 
 namespace Ui {
 class MainWindow;
@@ -25,15 +23,42 @@ public:
 
 private:
     Ui::MainWindow *ui;
-    QLineEdit *lineEdit;
-    QTextEdit *textEdit;
-    QPlainTextEdit *plainEdit;
-    QComboBox *comBox;
-    QFontComboBox *fontComBox;
-    QSpinBox *spinBox;
-    QRadioButton* radioA, *radioB, *radioC;
-    QHBoxLayout *layout;
-    QWidget *widget;
+    QLabel* label;
+    QListWidget* listWidget;
+};
+
+class SpinBoxDelegate: public QStyledItemDelegate
+{
+    Q_OBJECT
+public:
+    SpinBoxDelegate(QObject* parent = 0): QStyledItemDelegate(parent){}
+    //返回用于进行编辑的控件
+    QWidget* createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const
+    {
+        QSpinBox* editor = new QSpinBox(parent);
+        editor->setMinimum(0);
+        editor->setMaximum(100);
+        return editor;
+    }
+    //赋值
+    void setEditorData(QWidget *editor, const QModelIndex &index) const
+    {
+        int value = index.model()->data(index, Qt::EditRole).toInt();
+        QSpinBox* spinBox = static_cast<QSpinBox*>(editor);
+        spinBox->setValue(value);
+    }
+    void setModelData(QWidget *editor, QAbstractItemModel *model, const QModelIndex &index) const
+    {
+        QSpinBox* spinBox = static_cast<QSpinBox*>(editor);
+        spinBox->interpretText();
+        int value = spinBox->value();
+        model->setData(index, value, Qt::EditRole);
+    }
+    void updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option, const QModelIndex &index) const
+    {
+        editor->setGeometry(option.rect);
+    }
+
 };
 
 #endif // MAINWINDOW_H

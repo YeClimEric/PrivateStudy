@@ -5,10 +5,12 @@
 #include <QTreeWidget>
 #include <QMenu>
 
+
 namespace Ui {
 class TTreeWidgetBuilder;
 }
 
+template <typename T>
 class TTreeWidgetBuilder : public QWidget
 {
     Q_OBJECT
@@ -16,12 +18,13 @@ class TTreeWidgetBuilder : public QWidget
 public:
     explicit TTreeWidgetBuilder(QWidget *parent = 0);
     ~TTreeWidgetBuilder();
-
+public:
+    void addItem(QTreeWidgetItem *pCurItem, QTreeWidgetItem *pParent);
 private:
     Ui::TTreeWidgetBuilder *ui;
 
     QTreeWidget *m_pTreeWidget;
-    QMenu* m_pContentMenu;
+    QMenu* m_pContentMenu; //后续处理
 };
 
 #endif // TTREEWIDGETBUILDER_H

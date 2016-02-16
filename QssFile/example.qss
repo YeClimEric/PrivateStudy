@@ -17,3 +17,9 @@ QPushButton:hover, QPushButton:pressed, QPushButton:checked{
 QToolButton#aa:pressed{
     color: red
     }
+QTableWidget{
+    color:red;
+    border:none;
+    padding:5px
+    
+    }
