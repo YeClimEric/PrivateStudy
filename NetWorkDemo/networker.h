@@ -14,7 +14,7 @@ public:
     static NetWorker* getInstance();
     ~NetWorker();
 
-    void get(QString url);
+    QNetworkReply* get(QString url);
 
 signals:
     void finished(QNetworkReply *reply);
@@ -28,8 +28,13 @@ private:
     Private *data;
 
     explicit NetWorker(QObject *parent = 0);
+#if QT_VERSION >= 0x050501
+    NetWorker(const NetWorker&) = delete;
+    NetWorker &operator =(NetWorker rth) = delete;
+#else
     NetWorker(const NetWorker&);Q_DECL_EQ_DELETE
     NetWorker &operator =(NetWorker rth);Q_DECL_EQ_DELETE
+#endif
 
 };
 

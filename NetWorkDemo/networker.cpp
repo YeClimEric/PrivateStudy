@@ -14,10 +14,10 @@ NetWorker::~NetWorker()
     data = 0;
 }
 
-void NetWorker::get(QString url)
+QNetworkReply* NetWorker::get(QString url)
 {
     qDebug()<<"get data";
-    data->manager->get(QNetworkRequest(QUrl(url)));
+    return data->manager->get(QNetworkRequest(QUrl(url)));
 }
 
 NetWorker::NetWorker(QObject *parent) :

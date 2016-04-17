@@ -123,11 +123,19 @@ QDebug operator<<(QDebug dbg, const WeatherDetail &w)
 
 QDebug operator<<(QDebug dbg, const WeatherInfo &w)
 {
-    dbg.nospace() <<"("
-                 <<"id:"<<w.id()
-                <<"City Name:"<<w.cityName()
-               <<"Data time:"<<w.dateTime().toString(Qt::DefaultLocaleLongDate)<<":"<<endl
-              <<"Pressure:" <<w.pressure()
-             <<"Temperture:"<<w.tempertuare();
+    dbg.nospace() << "("
+                      << "id: " << w.id() << "; "
+                      << "City name: " << w.cityName() << "; "
+                      << "Date time: " << w.dateTime().toString(Qt::DefaultLocaleLongDate) << ": " << endl
+                      << "Temperature: " << w.tempertuare() << ", "
+                      << "Pressure: " << w.pressure() << ", "
+                      << "Humidity: " << w.humidity() << endl
+                      << "Details: [";
+    foreach (WeatherDetail *detail, w.details()) {
+        dbg.nospace() << "( Description: " << detail->desc() << ", "
+                      << "Icon: " << detail->icon() << "), ";
+    }
+    dbg.nospace() << "]";
+
     return dbg.space();
 }

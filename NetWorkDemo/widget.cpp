@@ -10,13 +10,14 @@
 #include <QNetworkReply>
 #include <QVariantMap>
 #include <QVariant>
+#include <QMessageBox>
 
 #include "weatherinfo.h"
 
 Widget::Widget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Widget),
-    data(new Widget::Private())
+    m_pData(new Widget::Private())
 {
     ui->setupUi(this);
     QComboBox *cityList = new QComboBox(this);
@@ -39,49 +40,69 @@ Widget::Widget(QWidget *parent) :
     QLabel *dateTimeLabel = new QLabel(this);
     weatherLayout->addWidget(dateTimeLabel);
 
+    m_pData->descLabel = new QLabel(this);
+    weatherLayout->addWidget(m_pData->descLabel);
+    m_pData->iconLabel = new QLabel(this);
+    weatherLayout->addWidget(m_pData->iconLabel);
+
     QVBoxLayout* mainLayout = new QVBoxLayout(this);
     mainLayout->addLayout(cityListLayout);
     mainLayout->addLayout(weatherLayout);
     resize(320, 120);
     setWindowTitle("Weather");
 
-    connect(data->network, &NetWorker::finished, [=](QNetworkReply* reply){
-        qDebug()<<"Widget finished";
-        QJsonParseError error;
-        QJsonDocument jsonDoc = QJsonDocument::fromJson(reply->readAll(), &error);
+    connect(m_pData->network, &NetWorker::finished, [=](QNetworkReply* reply){
+        switch(m_pData->replyMap.value(reply))
+        {
+        case FetchWeatherInfo:
+            {
+                QJsonParseError error;
+                QJsonDocument jsonDoc = QJsonDocument::fromJson(reply->readAll(), &error);
 
-        if(error.error == QJsonParseError::NoError){
-            if(!(jsonDoc.isNull() || jsonDoc.isEmpty()) && (jsonDoc.isObject())){
-                QVariantMap data = jsonDoc.toVariant().toMap();
-                WeatherInfo weather;
-                weather.setCityName(data[QLatin1String("name")].toString());
-                QDateTime dateTime;
-                dateTime.setTime_t(data[QLatin1String("dt")].toLongLong());
-                weather.setDateTime(dateTime);
-                QVariantMap main = data[QLatin1String("main")].toMap();
-                weather.setTempertuare(main[QLatin1String("temp")].toFloat());
-                weather.setPressure(main[QLatin1String("pressure")].toFloat());
-                weather.setHumidity(main[QLatin1String("humidity")].toFloat());
-                QVariantList detaiList = data[QLatin1String("weather")].toList();
-                WeatherDetailList details;
-                foreach (QVariant w, detaiList) {
-                    QVariantMap wm = w.toMap();
-                    WeatherDetail *detail = new WeatherDetail;
-                    detail->setDesc(wm[QLatin1String("description")].toString());
-                    detail->setIcon(wm[QLatin1Literal("icon")].toString());
+                if(error.error == QJsonParseError::NoError){
+                    if(!(jsonDoc.isNull() || jsonDoc.isEmpty()) && (jsonDoc.isObject())){
+                        QVariantMap data = jsonDoc.toVariant().toMap();
+                        WeatherInfo weather;
+                        weather.setCityName(data[QLatin1String("name")].toString());
+                        QDateTime dateTime;
+                        dateTime.setTime_t(data[QLatin1String("dt")].toLongLong());
+                        weather.setDateTime(dateTime);
+                        QVariantMap main = data[QLatin1String("main")].toMap();
+                        weather.setTempertuare(main[QLatin1String("temp")].toFloat());
+                        weather.setPressure(main[QLatin1String("pressure")].toFloat());
+                        weather.setHumidity(main[QLatin1String("humidity")].toFloat());
+                        QVariantList detaiList = data[QLatin1String("weather")].toList();
+                        WeatherDetailList details;
+                        foreach (QVariant w, detaiList) {
+                            QVariantMap wm = w.toMap();
+                            WeatherDetail *detail = new WeatherDetail;
+                            detail->setDesc(wm[QLatin1String("description")].toString());
+                            detail->setIcon(wm[QLatin1Literal("icon")].toString());
+                            details.append(detail);
+                        }
+                        weather.setDetails(details);
+                        cityNameLabel->setText(weather.cityName());
+                        dateTimeLabel->setText(weather.dateTime().toString(Qt::DefaultLocaleLongDate));
+                        m_pData->descLabel->setText(weather.details().at(0)->desc());
+                        qDebug()<<weather;
+                    }
+                    else{
+                        QMessageBox::critical(this, "Error","Parse Reply Error!");
+                    }
                 }
-                weather.setDetails(details);
-                cityNameLabel->setText(weather.cityName());
-                dateTimeLabel->setText(weather.dateTime().toString(Qt::DefaultLocaleLongDate));
-                qDebug()<<weather;
+            }
+        case FetchWeatherIcon:
+            {
+            QPixmap pixmap;
+            pixmap.loadFromData(reply->readAll());
+            m_pData->iconLabel->setPixmap(pixmap);
             }
         }
         reply->deleteLater();
     });
 
     connect(refreshButton, &QPushButton::clicked, [=]{
-        data->fetchWeather(cityList->itemData(cityList->currentIndex()).toString());
-        qDebug()<<"refresh Weather";
+        m_pData->fetchWeather(cityList->itemData(cityList->currentIndex()).toString());
     });
 
 }
