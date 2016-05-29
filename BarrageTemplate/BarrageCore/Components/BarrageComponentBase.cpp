@@ -1,4 +1,3 @@
-#include "StdAfx.h"
 #include "BarrageComponentBase.h"
 
 CBarrageComponentBase::CBarrageComponentBase(QWidget *parent)

@@ -1,16 +1,13 @@
-#include "StdAfx.h"
 #include "barragewidget.h"
 #include "barragecore.h"
 #include "barrageanimation.h"
-#include "croomui.h"
 
 #include <QFile>
 #include <QLabel>
 #include <QPushButton>
 
-CBarrageWidget::CBarrageWidget(CRoomUI* parent)
-: QWidget(parent->m_pRoomUIWgd),
-m_pRoomUI(parent)
+CBarrageWidget::CBarrageWidget(QWidget* parent)
+: QWidget(parent)
 {
     setWindowFlags(Qt::SubWindow | Qt::FramelessWindowHint | Qt::Window);
     setAttribute(Qt::WA_TranslucentBackground);
@@ -18,10 +15,7 @@ m_pRoomUI(parent)
     setFocusPolicy(Qt::NoFocus);
     setAttribute(Qt::WA_X11DoNotAcceptFocus, true);
 
-    /*this->setStyleSheet("background-color:red");
-    setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-    show();*/
-    m_parentClass = static_cast<QWidget*>(parent->m_pRoomUIWgd);
+    m_parentClass = static_cast<QWidget*>(parent);
     m_barrageState = true;//测试需要，先置位
     m_fontSize = 15;
     m_backgroundColor = QColor(255, 0, 0);
@@ -34,17 +28,17 @@ CBarrageWidget::~CBarrageWidget()
 
 void CBarrageWidget::OnMove()
 {
-    if(m_pRoomUI != NULL && m_pRoomUI->m_pVideoLayout != NULL)
-    {
-        QRect qrcChatArea = m_pRoomUI->m_pVideoLayout->geometry();
-        QPoint ptTopLeft = m_pRoomUI->m_pRoomUIWgd->mapToGlobal(qrcChatArea.topLeft());
-        int cx = ptTopLeft.x();
-        int cy = ptTopLeft.y();
+//    if(m_pRoomUI != NULL && m_pRoomUI->m_pVideoLayout != NULL)
+//    {
+//        QRect qrcChatArea = m_pRoomUI->m_pVideoLayout->geometry();
+//        QPoint ptTopLeft = m_pRoomUI->m_pRoomUIWgd->mapToGlobal(qrcChatArea.topLeft());
+//        int cx = ptTopLeft.x();
+//        int cy = ptTopLeft.y();
 
-        setGeometry(cx, cy, qrcChatArea.width(), qrcChatArea.height());
+//        setGeometry(cx, cy, qrcChatArea.width(), qrcChatArea.height());
 
-        move(cx, cy);
-    }
+//        move(cx, cy);
+//    }
 }
 
 void CBarrageWidget::start()

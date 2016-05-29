@@ -14,7 +14,7 @@
 
 class QVideoWidget;
 class VideoControl;
-class BarrageWidget;
+class CBarrageWidget;
 
 class VideoView : public QWidget
 {
@@ -36,7 +36,7 @@ private slots:
     void mediaChanged(const QString &data);
     void stateChanged(QMediaPlayer::State state);
 
-    void addBarrageChanged(const QString &string);
+    void addBarrageChanged(const QString &str);
     void pushBarrageChanged(bool on);
     void barrageSizeButtonChanged(int size);
     void barrageColorButtonChanged(const QColor &color);
@@ -49,7 +49,7 @@ protected:
     QMediaPlayer *m_player;
     QVideoWidget *m_videoWidget;
     VideoControl *m_control;
-    BarrageWidget *m_barrageCore;
+    CBarrageWidget *m_barrageCore;
 
 };
 

@@ -38,27 +38,37 @@ win32{
     }
 }
 
-INCLUDEPATH += $$PWD/core \
+INCLUDEPATH += $$PWD/BarrageCore \
                $$PWD/widget \
+                $$PWD/Components   \
                $$PWD/
 
 TRANSLATIONS += cn.ts
 
 SOURCES += \
         main.cpp \
-        widget/barragewidget.cpp \
-        widget/videocontrol.cpp \
-        widget/barrageedit.cpp \
-        core/barrageanimation.cpp \
-        videoview.cpp
+        videoview.cpp \
+    BarrageCore/BarrageAnimation.cpp \
+    BarrageCore/BarrageWidget.cpp \
+    BarrageCore/Components/BarrageComponentBase.cpp \
+    widget/videocontrol.cpp \
+    widget/barrageedit.cpp \
+    BarrageCore/DataClass/cbdatabase.cpp \
+    BarrageCore/DataClass/cbverticalscreendata.cpp \
+    BarrageCore/Components/cbverticalscreencomponent.cpp
 
 HEADERS  += \
-        widget/barragewidget.h \
-        widget/videocontrol.h \
-        widget/barrageedit.h \
-        core/barrageanimation.h \
-        core/barragecore.h \
-        videoview.h
+        videoview.h \
+    BarrageCore/BarrageAnimation.h \
+    BarrageCore/BarrageCore.h \
+    BarrageCore/BarrageWidget.h \
+    BarrageCore/Components/BarrageComponentBase.h \
+    widget/videocontrol.h \
+    widget/barrageedit.h \
+    BarrageCore/Components/cbverticalscreencomponent.h \
+    BarrageCore/DataClass/cbdatabase.h \
+    BarrageCore/DataClass/cbverticalscreendata.h \
+    BarrageCore/dynobjectfactory.h
 
 
 RESOURCES+= QBarrage.qrc
@@ -69,3 +79,6 @@ RESOURCES+= QBarrage.qrc
 #FORMS    += \
 #        ui/weatherapplication.ui \
 #        ui/weathermessagebox.ui
+
+DISTFILES += \
+    cn.ts

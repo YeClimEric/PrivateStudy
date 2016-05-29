@@ -5,6 +5,8 @@
 #include <QVideoWidget>
 #include <QBoxLayout>
 
+#include "DataClass/cbverticalscreendata.h"
+
 VideoView::VideoView(QWidget *parent)
     : QWidget(parent)
 {
@@ -25,10 +27,11 @@ VideoView::VideoView(QWidget *parent)
     connect(m_control, SIGNAL(barrageSizeButtonChanged(int)), SLOT(barrageSizeButtonChanged(int)));
     connect(m_control, SIGNAL(barrageColorButtonChanged(QColor)), SLOT(barrageColorButtonChanged(QColor)));
     m_control->setGeometry(15, 430, 670, 50);
-    m_control->hide();
+//    m_control->hide();
 
-    m_barrageCore = new BarrageWidget(this);
+    m_barrageCore = new CBarrageWidget(this);
     m_barrageCore->setSize(QSize(650, 380));
+    m_barrageCore->show();
     m_player->setVideoOutput(m_videoWidget);
 
     QHBoxLayout *layout = new QHBoxLayout(this);
@@ -54,7 +57,7 @@ void VideoView::enterEvent(QEvent *event)
 void VideoView::leaveEvent(QEvent *event)
 {
     QWidget::leaveEvent(event);
-    m_control->hide();
+//    m_control->hide();
 }
 
 void VideoView::contextMenuEvent(QContextMenuEvent *event)
@@ -125,9 +128,12 @@ void VideoView::mediaChanged(const QString &data)
     m_player->play();
 }
 
-void VideoView::addBarrageChanged(const QString &string)
+void VideoView::addBarrageChanged(const QString &str)
 {
-    m_barrageCore->addBarrage(string);
+    CBVerticalScreenData* pData = new CBVerticalScreenData();
+    pData->initData(str);
+
+    m_barrageCore->addBarrage(pData);
 }
 
 void VideoView::pushBarrageChanged(bool on)
@@ -137,10 +143,10 @@ void VideoView::pushBarrageChanged(bool on)
 
 void VideoView::barrageSizeButtonChanged(int size)
 {
-    m_barrageCore->setLabelTextSize(size);
+    m_barrageCore->setCompTextSize(size);
 }
 
 void VideoView::barrageColorButtonChanged(const QColor &color)
 {
-    m_barrageCore->setLabelBackground(color);
+    m_barrageCore->setCompBackground(color);
 }

@@ -1,7 +1,6 @@
 #ifndef BARRAGEWIDGET_H
 #define BARRAGEWIDGET_H
 
-#include "StdAfx.h"
 #include <QWidget>
 
 class QLabel;
@@ -13,7 +12,7 @@ class CBarrageWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit CBarrageWidget(CRoomUI* parent);
+    explicit CBarrageWidget(QWidget* parent);
     ~CBarrageWidget();
 
     void OnMove();
@@ -28,10 +27,6 @@ public:
     void setLabelBackground(const QColor &color);
     void setLabelTextSize(int size);
     void addBarrage(const QString &string);
-
-
-    //temp
-    void Show(BOOL abShow){}
 
 protected:
     void deleteItems();
