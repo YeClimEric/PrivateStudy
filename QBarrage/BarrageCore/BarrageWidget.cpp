@@ -18,6 +18,8 @@ CBarrageWidget::CBarrageWidget(QWidget* parent, QString asComponentName /*= "CBa
 //    setFocusPolicy(Qt::NoFocus);
 //    setAttribute(Qt::WA_X11DoNotAcceptFocus, true);
 
+    setStyleSheet("background-color:red;");
+
     m_parentClass = static_cast<QWidget*>(parent);
     m_barrageState = false;
     m_fontSize = 15;

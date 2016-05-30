@@ -23,8 +23,6 @@ public:
     void barrageStateChanged(bool on);
     void setSize(const QSize &size);
 
-    void setCompBackground(const QColor &color);
-    void setCompTextSize(int size);
     void addBarrage(CBDataBase *apData);
 
 public slots:
