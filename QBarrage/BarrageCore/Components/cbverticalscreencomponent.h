@@ -22,7 +22,7 @@ public:
 //    virtual void setCompStyleSheet(const QString &asStyle);
 
 private:
-
+    setBarrageBackground();
 private:
     QLabel* m_pDesLabel;
     QLabel* m_pSenderNameLabel;

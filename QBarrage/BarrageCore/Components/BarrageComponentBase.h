@@ -16,6 +16,10 @@ public:
     //写入弹幕的数据，子类实现
     virtual void setData(const CBDataBase* data){}
 
+protected:
+    //设置弹幕的样式，子类实现
+    virtual void setBackgroundStyle(){};
+
 private:
 	
 };
