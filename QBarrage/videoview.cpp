@@ -143,10 +143,10 @@ void VideoView::pushBarrageChanged(bool on)
 
 void VideoView::barrageSizeButtonChanged(int size)
 {
-    m_barrageCore->setCompTextSize(size);
+//    m_barrageCore->setCompTextSize(size);
 }
 
 void VideoView::barrageColorButtonChanged(const QColor &color)
 {
-    m_barrageCore->setCompBackground(color);
+//    m_barrageCore->setCompBackground(color);
 }

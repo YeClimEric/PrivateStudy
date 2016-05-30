@@ -16,9 +16,6 @@ public:
 
     void setSize(const QSize &size);
 
-public slots:
-    void animationFinished();
-
 protected:
     void init();
     QSize m_parentSize;

@@ -21,15 +21,6 @@ CBarrageAnimation::~CBarrageAnimation()
 
 }
 
-void CBarrageAnimation::animationFinished()
-{
-    /*delete m_pTarget;
-    m_pTarget = nullptr;*/
-    setDuration(qrand() % 10000 + 1000);
-    setSize(m_parentSize);
-    start();
-}
-
 void CBarrageAnimation::setSize(const QSize &size)
 {
     m_parentSize = size;
@@ -43,6 +34,4 @@ void CBarrageAnimation::init()
     BarrageCore::timeSRand();
     setDuration(qrand()%10000 + 1000);
     setEasingCurve(QEasingCurve::Linear);
-
-    connect(this, SIGNAL(finished()), SLOT(animationFinished()));
 }

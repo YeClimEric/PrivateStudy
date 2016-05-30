@@ -27,14 +27,13 @@ public:
     void setCompTextSize(int size);
     void addBarrage(CBDataBase *apData);
 
+public slots:
+    void animationFinished();
+
 protected:
     void deleteItems();
-    void createDisplayComponent();
-    void createDisplayComponent(CBarrageComponentBase *apComp);
     void createAnimation();
     void createAnimation(CBarrageComponentBase *apComp);
-    void setCompBackground(CBarrageComponentBase *apComp);
-    void setCompTextSize(CBarrageComponentBase *apComp);
 
 private:
     QWidget *m_parentClass;
