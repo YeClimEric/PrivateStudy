@@ -1,4 +1,4 @@
-#include "cbdatabase.h"
+#include "CBDataBase.h"
 
 CBDataBase::CBDataBase()
 {

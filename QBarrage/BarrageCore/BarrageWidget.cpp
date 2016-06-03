@@ -3,28 +3,36 @@
 #include "barragecore.h"
 #include "barrageanimation.h"
 #include "Components/BarrageComponentBase.h"
-#include "Components/cbverticalscreencomponent.h"
+#include "Components/CBVerticalScreenComponent.h"
 #include "dynobjectfactory.h"
-
-#include <QDebug>
+#include <QVariant>
 
 CBarrageWidget::CBarrageWidget(QWidget* parent, QString asComponentName /*= "CBarrageComponentBase"*/)
-: QWidget(parent),
-  m_sComponentName(asComponentName)
+: CBarrageWdgBase(parent, asComponentName),
+  m_iLineCount(2),
+  m_iBarrageIntervalLength(70)
 {
-//    setWindowFlags(Qt::SubWindow | Qt::FramelessWindowHint | Qt::Window);
-//    setAttribute(Qt::WA_TranslucentBackground);
-//    setAttribute(Qt::WA_ShowWithoutActivating, true);
-//    setFocusPolicy(Qt::NoFocus);
-//    setAttribute(Qt::WA_X11DoNotAcceptFocus, true);
-
-    setStyleSheet("background-color:red;");
+    setWindowFlags(Qt::SubWindow | Qt::FramelessWindowHint | Qt::Window);
+    setAttribute(Qt::WA_TranslucentBackground);
+    setAttribute(Qt::WA_ShowWithoutActivating, true);
+    setFocusPolicy(Qt::NoFocus);
+    setAttribute(Qt::WA_X11DoNotAcceptFocus, true);
 
     m_parentClass = static_cast<QWidget*>(parent);
-    m_barrageState = false;
-    m_fontSize = 15;
-    m_backgroundColor = QColor(255, 0, 0);
-    setFixedSize(650,380);
+    m_barrageState = true;
+
+    m_pMainLayout = new QVBoxLayout(this);
+    m_pMainLayout->setSpacing(0);
+    m_pMainLayout->setContentsMargins(0, 0, 0, 0);
+
+    //先初始化一把弹幕的布局
+    for(int i = 0; i < m_iLineCount; i++)
+    {
+        QWidget* pWdg = new QWidget(this);
+        pWdg->setObjectName(QString("Line%1").arg(i));
+        m_pMainLayout->addWidget(pWdg);
+        m_lsDisplayLine.push_back(pWdg);
+    }
 }
 
 CBarrageWidget::~CBarrageWidget()
@@ -33,14 +41,32 @@ CBarrageWidget::~CBarrageWidget()
 }
 
 
+void CBarrageWidget::onMove()
+{
+
+}
+
 void CBarrageWidget::start()
 {
     if(m_barrageState)
     {
-        for(int i=0; i<m_lsComponent.count(); i++)
+        if (!getComponentsList().isEmpty() && (getCurrentShowBarrageWdgCount() < m_iLineCount))
         {
-            m_lsComponent[i]->show();
-            m_lsAnimations[i]->start();
+            int iCurCount = getCurrentShowBarrageWdgCount();
+            while((getAnimationList().size() == getComponentsList().size()) &&
+                (getComponentsList().size() > iCurCount) &&
+                iCurCount < m_iLineCount
+                )
+            {
+                QWidget* pParentWdg = getNullChildLineWdg();
+                //找不到的话说明正在满载弹幕，直接跳出即可
+                if (pParentWdg == nullptr)
+                {
+                    break;
+                }
+                onAppendAnimation(pParentWdg);
+                iCurCount = getCurrentShowBarrageWdgCount();
+            }
         }
     }
 }
@@ -49,113 +75,116 @@ void CBarrageWidget::pause()
 {
     if(m_barrageState)
     {
-        for(int i=0; i<m_lsComponent.count(); i++)
+        for(int i=0; i<getComponentsList().count(); i++)
         {
-            m_lsComponent[i]->hide();
-            m_lsAnimations[i]->pause();
+            getComponentsList()[i]->hide();
+            getAnimationList()[i]->pause();
         }
     }
 }
 
 void CBarrageWidget::stop()
 {
-    for(int i=0; i<m_lsComponent.count(); i++)
+    for(int i=0; i<getComponentsList().count(); i++)
     {
-        m_lsComponent[i]->hide();
-        m_lsAnimations[i]->stop();
+        getComponentsList()[i]->hide();
+        getAnimationList()[i]->stop();
+    }
+}
+void CBarrageWidget::onShow(bool abShow)
+{
+    if(abShow && m_barrageState)
+    {
+        onMove();
+        show();
+    }
+    else
+    {
+        hide();
     }
 }
 
-void CBarrageWidget::barrageStateChanged(bool on)
+void CBarrageWidget::onCurrentValueChanged(const QVariant &val)
 {
-    m_barrageState = on;
-//    if(m_barrageState && !m_lsBarrageData.isEmpty())
-//    {
-//        deleteItems();
-//        createDisplayComponent();
-//        createAnimation();
-//        setCompTextSize(m_fontSize);
-//        start();
-//    }
-//    else
-//    {
-//        stop();
-//    }
-}
-
-void CBarrageWidget::setSize(const QSize &size)
-{
-    m_parentSize = size;
-    foreach(CBarrageAnimation *anima, m_lsAnimations)
-    {
-        anima->setSize(size);
-    }
-}
-
-void CBarrageWidget::addBarrage(CBDataBase *apData)
-{
-    BarrageCore::timeSRand();
-    CBarrageComponentBase *pComp = static_cast<CBarrageComponentBase*>(CDynObjectFactory::CreateObject("CBVerticalScreenComponent",this));
-    if(pComp == nullptr)
-        return;
-    createAnimation(pComp);
-    pComp->setData(apData);
-    m_lsComponent << pComp;
-    start();
-}
-
-void CBarrageWidget::animationFinished()
-{
-    qDebug()<<"animationFinished BEGIN!";
     CBarrageAnimation* pAnim = dynamic_cast<CBarrageAnimation*>(sender());
     if(pAnim == nullptr)
-        return ;
-    int iAnimIndex = m_lsAnimations.indexOf(pAnim);
-    if(iAnimIndex == -1)
         return;
 
-
-    CBarrageComponentBase* pComp = dynamic_cast<CBarrageComponentBase*>(pAnim->targetObject());
-    if(pComp == nullptr)
+    CBarrageComponentBase* pTarget = dynamic_cast<CBarrageComponentBase*>(pAnim->targetObject());
+    if((pTarget == nullptr) || pTarget->parent() == nullptr)
         return;
-    int iCompIndex = m_lsComponent.indexOf(pComp);
-    if(iCompIndex == -1)
+
+    QWidget* pParent = dynamic_cast<QWidget*>(pTarget->parent());
+    if(pParent == nullptr)
         return;
-    m_lsAnimations.removeAt(iAnimIndex);
-    m_lsComponent.removeAt(iCompIndex);
 
-    pAnim->stop();
-    delete pAnim;
-    pAnim = nullptr;
-    delete pComp;
-    pComp = nullptr;
+    QObjectList oList = pParent->children();
+    if (oList.size() == 0)
+        return;
 
-    qDebug()<<"animationFinished END!";
-}
-
-void CBarrageWidget::deleteItems()
-{
-    while(!m_lsComponent.isEmpty())
+    CBarrageComponentBase* pLastTarget = dynamic_cast<CBarrageComponentBase*>(oList.last());
+    if ((pLastTarget == nullptr) ||
+        (pLastTarget != pTarget))
     {
-        delete m_lsComponent.takeLast();
-        delete m_lsAnimations.takeLast();
+        return;
     }
-}
 
-void CBarrageWidget::createAnimation()
-{
-    foreach(CBarrageComponentBase *pComp, m_lsComponent)
+    QPoint oCurPos = val.toPoint();
+    if(pParent->width() - (pTarget->width() + oCurPos.x()) >= m_iBarrageIntervalLength)
     {
-        createAnimation(pComp);
+        onAppendAnimation(pParent);
     }
+
 }
 
-void CBarrageWidget::createAnimation(CBarrageComponentBase *apComp)
+void CBarrageWidget::onAppendAnimation(QWidget* parent)
 {
-    CBarrageAnimation *anim = new CBarrageAnimation(apComp, "pos");
-    connect(anim, SIGNAL(finished()), this, SLOT(animationFinished()));
-    anim->setSize(m_parentSize);
-    anim->setDirection(QAbstractAnimation::Backward);
-    m_lsAnimations << anim;
+    int iCurCount = getCurrentShowBarrageWdgCount();
+    if(getComponentsList().size() <= iCurCount)
+    {
+        return;
+    }
+    QWidget* pCurWdg = getComponentsList()[iCurCount];
+    pCurWdg->setParent(parent);
+    pCurWdg->show();
+    getAnimationList()[iCurCount]->setStartValue(QPoint(0 - pCurWdg->width(), 0));
+    getAnimationList()[iCurCount]->setEndValue(QPoint(parent->width(), 0));
+    getAnimationList()[iCurCount]->setDuration(parent->width() * 10 * 3);
+
+    getAnimationList()[iCurCount]->start();
+}
+
+void CBarrageWidget::addAnimationToQueue(CBarrageAnimation* apAnimation)
+{
+    if(m_pMainLayout == nullptr)
+        return;
+    if(apAnimation == nullptr)
+        return;
+
+    QWidget* pTargetWidget = dynamic_cast<QWidget*>(apAnimation->targetObject());
+    m_pMainLayout->addWidget(pTargetWidget);
+    apAnimation->start();
+}
+
+int CBarrageWidget::getCurrentShowBarrageWdgCount()
+{
+    int iCount = 0;
+    foreach(QWidget* it, m_lsDisplayLine)
+    {
+        iCount += it->children().size();
+    }
+    return iCount;
+}
+
+QWidget* CBarrageWidget::getNullChildLineWdg()
+{
+    foreach(QWidget* it, m_lsDisplayLine)
+    {
+        if (it->children().size() == 0)
+        {
+            return it;
+        }
+    }
+    return nullptr;
 }
 

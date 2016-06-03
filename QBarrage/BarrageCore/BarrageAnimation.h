@@ -14,12 +14,13 @@ public:
     CBarrageAnimation(QWidget *target, const QByteArray &propertyName, QWidget *parent = 0);
     ~CBarrageAnimation();// = default;//Q_DECL_EQ_DEFAULT
 
-    void setSize(const QSize &size);
+    inline void setMinDuration(int aiDuration){ m_iMinDuration = aiDuration; }
 
 protected:
     void init();
     QSize m_parentSize;
     QWidget* m_pTarget;
+    int m_iMinDuration;
 
 };
 

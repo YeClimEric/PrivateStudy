@@ -1,7 +1,6 @@
 #ifndef CDYNOBJECTFACTORY_H
 #define CDYNOBJECTFACTORY_H
 
-#include <map>
 #include <QMap>
 #include <QString>
 #include <QWidget>

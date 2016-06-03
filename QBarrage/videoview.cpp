@@ -5,7 +5,7 @@
 #include <QVideoWidget>
 #include <QBoxLayout>
 
-#include "DataClass/cbverticalscreendata.h"
+#include "DataClass/CBVerticalScreenData.h"
 
 VideoView::VideoView(QWidget *parent)
     : QWidget(parent)
@@ -29,7 +29,7 @@ VideoView::VideoView(QWidget *parent)
     m_control->setGeometry(15, 430, 670, 50);
 //    m_control->hide();
 
-    m_barrageCore = new CBarrageWidget(this);
+    m_barrageCore = new CBarrageWidget(this,"CBVerticalScreenComponent");
     m_barrageCore->setSize(QSize(650, 380));
     m_barrageCore->show();
     m_player->setVideoOutput(m_videoWidget);

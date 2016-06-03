@@ -1,8 +1,10 @@
+#include "StdAfx.h"
 #include "barrageanimation.h"
 #include "barragecore.h"
 
 CBarrageAnimation::CBarrageAnimation(QWidget *parent)
-    : QPropertyAnimation(parent)
+    : QPropertyAnimation(parent),
+    m_iMinDuration(3000)
 {
     init();
 }
@@ -12,6 +14,7 @@ CBarrageAnimation::CBarrageAnimation(QWidget *target,
                                              QWidget *parent)
     : QPropertyAnimation(target, propertyName, parent)
     , m_pTarget(target)
+    , m_iMinDuration(3)
 {
     init();
 }
@@ -21,17 +24,9 @@ CBarrageAnimation::~CBarrageAnimation()
 
 }
 
-void CBarrageAnimation::setSize(const QSize &size)
-{
-    m_parentSize = size;
-    int randHeight = qrand()%size.height();
-    setStartValue(QPoint(0, randHeight));
-    setEndValue(QPoint(size.width(), randHeight));
-}
-
 void CBarrageAnimation::init()
 {
-    BarrageCore::timeSRand();
-    setDuration(qrand()%10000 + 1000);
+    /*BarrageCore::timeSRand();
+    setDuration(qrand() % 10000 + m_iMinDuration);*/
     setEasingCurve(QEasingCurve::Linear);
 }

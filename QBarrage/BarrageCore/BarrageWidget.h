@@ -2,49 +2,52 @@
 #define BARRAGEWIDGET_H
 
 #include <QWidget>
+#include <QVBoxLayout>
+
+#include "BarrageWdgBase.h"
 
 class CBarrageAnimation;
 class CBarrageComponentBase;
 class CBDataBase;
 
-class CBarrageWidget : public QWidget
+class CBarrageWidget : public CBarrageWdgBase
 {
     Q_OBJECT
 public:
     explicit CBarrageWidget(QWidget* parent, QString asComponentName = "CBarrageComponentBase");
     ~CBarrageWidget();
 
-    void OnMove();
 
     void start();
     void pause();
     void stop();
 
-    void barrageStateChanged(bool on);
-    void setSize(const QSize &size);
+    void onShow(bool abShow);
+    void onMove();
 
-    void addBarrage(CBDataBase *apData);
+    inline void setBarrageLineCount(int aiLine){ m_iLineCount = aiLine; }
+    inline void setBarrageIntervalLength(int aiInterval){ m_iBarrageIntervalLength = aiInterval; }
 
 public slots:
-    void animationFinished();
+    virtual void onCurrentValueChanged(const QVariant  &val);
+    void onAppendAnimation(QWidget* parent);
 
-protected:
-    void deleteItems();
-    void createAnimation();
-    void createAnimation(CBarrageComponentBase *apComp);
+private:
+    void addAnimationToQueue(CBarrageAnimation* apAnimation);
+    int getCurrentShowBarrageWdgCount();
+    QWidget* getNullChildLineWdg();
+
 
 private:
     QWidget *m_parentClass;
-    QString m_sComponentName;
     bool m_barrageState;
     QSize m_parentSize;
-    int m_fontSize;
-    QColor m_backgroundColor;
-    QList<CBarrageComponentBase*> m_lsComponent;
-    QList<CBarrageAnimation*> m_lsAnimations;
-    QList<CBDataBase*> m_lsBarrageData;
-    CBarrageComponentBase* m_pDisplayComponent;
 
+    QVBoxLayout* m_pMainLayout;
+    QList<QWidget*> m_lsDisplayLine;
+
+    int m_iLineCount;
+    int m_iBarrageIntervalLength;
 };
 
 #endif // BARRAGEWIDGET_H

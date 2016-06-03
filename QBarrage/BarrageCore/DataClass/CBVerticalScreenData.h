@@ -1,15 +1,18 @@
 #ifndef CBVERTICALSCREENDATA_H
 #define CBVERTICALSCREENDATA_H
 
-#include "cbdatabase.h"
+#include "CBDataBase.h"
 #include <QString>
+
+struct STRU_TVSHOW_UI_BARRAGE_APPEND_DATA{};
 
 class CBVerticalScreenData : public CBDataBase
 {
 public:
     CBVerticalScreenData();
 
-    void initData(const QString &str);
+    void initData(const STRU_TVSHOW_UI_BARRAGE_APPEND_DATA *apData);
+    void initData(const QString csData);
     inline QString getDescription(){ return m_sDescription;}
     inline QString getSenderName(){ return m_sSenderName;}
 

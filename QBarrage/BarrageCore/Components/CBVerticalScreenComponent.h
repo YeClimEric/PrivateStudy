@@ -2,7 +2,7 @@
 #define CBVERTICALSCREENCOMPONENT_H
 
 #include <QWidget>
-#include "dynobjectfactory.h"
+#include "DynObjectFactory.h"
 #include "BarrageComponentBase.h"
 
 
@@ -15,17 +15,17 @@ class CBVerticalScreenComponent : public CBarrageComponentBase
 {
 public:
     CBVerticalScreenComponent(QWidget* parent);
+    ~CBVerticalScreenComponent();
 
     //写入弹幕的数据
     virtual void setData(const CBDataBase* acpData);
-    //设置样式
-//    virtual void setCompStyleSheet(const QString &asStyle);
 
 private:
-    setBarrageBackground();
+    void setStyle();
 private:
     QLabel* m_pDesLabel;
     QLabel* m_pSenderNameLabel;
+    QLabel* m_pLeftLabel, *m_pRightLabel;
     QHBoxLayout* m_pMainLayout;
 
 };

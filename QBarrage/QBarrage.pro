@@ -53,9 +53,10 @@ SOURCES += \
     BarrageCore/Components/BarrageComponentBase.cpp \
     widget/videocontrol.cpp \
     widget/barrageedit.cpp \
-    BarrageCore/DataClass/cbdatabase.cpp \
-    BarrageCore/DataClass/cbverticalscreendata.cpp \
-    BarrageCore/Components/cbverticalscreencomponent.cpp
+    BarrageCore/BarrageWdgBase.cpp \
+    BarrageCore/DataClass/CBDataBase.cpp \
+    BarrageCore/DataClass/CBVerticalScreenData.cpp \
+    BarrageCore/Components/CBVerticalScreenComponent.cpp
 
 HEADERS  += \
         videoview.h \
@@ -65,10 +66,11 @@ HEADERS  += \
     BarrageCore/Components/BarrageComponentBase.h \
     widget/videocontrol.h \
     widget/barrageedit.h \
-    BarrageCore/Components/cbverticalscreencomponent.h \
-    BarrageCore/DataClass/cbdatabase.h \
-    BarrageCore/DataClass/cbverticalscreendata.h \
-    BarrageCore/dynobjectfactory.h
+    BarrageCore/BarrageWdgBase.h \
+    BarrageCore/DataClass/CBVerticalScreenData.h \
+    BarrageCore/DataClass/CBDataBase.h \
+    BarrageCore/DynObjectFactory.h \
+    BarrageCore/Components/CBVerticalScreenComponent.h
 
 
 RESOURCES+= QBarrage.qrc
