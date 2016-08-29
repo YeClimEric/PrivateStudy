@@ -4,5 +4,7 @@
         <file>image/background.png</file>
         <file>image/pinwheel.png</file>
         <file>Button.qml</file>
+        <file>ShapeShiftingDelegate.qml</file>
+        <file>ListModelGridViewDelegate.qml</file>
     </qresource>
 </RCC>
