@@ -6,5 +6,6 @@
         <file>Button.qml</file>
         <file>ShapeShiftingDelegate.qml</file>
         <file>ListModelGridViewDelegate.qml</file>
+        <file>PathViewDemo.qml</file>
     </qresource>
 </RCC>

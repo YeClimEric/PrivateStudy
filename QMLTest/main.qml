@@ -13,9 +13,15 @@ Window {
 
 //    }
 
-    ListModelGridViewDelegate{
+    PathViewDemo{
+        width:parent.width
+        height: parent.height
 
     }
+
+//    ListModelGridViewDelegate{
+
+//    }
 
     /*简单的View-delegate*/
 //    ListView{
