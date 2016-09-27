@@ -1,5 +1,5 @@
 #include "videocontrol.h"
-#include "barragecore.h"
+#include "Core/barragecore.h"
 #include "barrageedit.h"
 
 #include <QPushButton>

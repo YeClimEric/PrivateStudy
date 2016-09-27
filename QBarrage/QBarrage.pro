@@ -42,35 +42,32 @@ INCLUDEPATH += $$PWD/BarrageCore \
                $$PWD/widget \
                 $$PWD/Components   \
                $$PWD/
-
-TRANSLATIONS += cn.ts
-
 SOURCES += \
         main.cpp \
         videoview.cpp \
-    BarrageCore/Components/ComponentBase.cpp \
+    Core/Components/ComponentBase.cpp \
     widget/videocontrol.cpp \
     widget/barrageedit.cpp \
-    BarrageCore/DataClass/CBDataBase.cpp \
-    BarrageCore/DataClass/CBVerticalScreenData.cpp \
-    BarrageCore/Components/CBVerticalScreenComponent.cpp \
-    BarrageCore/Widget/WidgetBase.cpp \
-    BarrageCore/Widget/BarrageWidget.cpp \
-    BarrageCore/Animations/ContainerAnimation/BarrageAnimation.cpp
+    Core/DataClass/CBDataBase.cpp \
+    Core/DataClass/CBVerticalScreenData.cpp \
+    Core/Components/CBVerticalScreenComponent.cpp \
+    Core/Widget/WidgetBase.cpp \
+    Core/Widget/BarrageWidget.cpp \
+    Core/Animations/ContainerAnimation/BarrageAnimation.cpp
 
 HEADERS  += \
         videoview.h \
-    BarrageCore/BarrageCore.h \
+    Core/BarrageCore.h \
     widget/videocontrol.h \
     widget/barrageedit.h \
-    BarrageCore/DataClass/CBVerticalScreenData.h \
-    BarrageCore/DataClass/CBDataBase.h \
-    BarrageCore/DynObjectFactory.h \
-    BarrageCore/Components/CBVerticalScreenComponent.h \
-    BarrageCore/Widget/BarrageWidget.h \
-    BarrageCore/Animations/ContainerAnimation/BarrageAnimation.h \
-    BarrageCore/Components/ComponentBase.h \
-    BarrageCore/Widget/WidgetBase.h
+    Core/DataClass/CBVerticalScreenData.h \
+    Core/DataClass/CBDataBase.h \
+    Core/DynObjectFactory.h \
+    Core/Components/CBVerticalScreenComponent.h \
+    Core/Widget/BarrageWidget.h \
+    Core/Animations/ContainerAnimation/BarrageAnimation.h \
+    Core/Components/ComponentBase.h \
+    Core/Widget/WidgetBase.h
 
 
 RESOURCES+= QBarrage.qrc

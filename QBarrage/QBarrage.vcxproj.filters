@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Distribution Files">
+      <UniqueIdentifier>{B83CAF91-C7BF-462F-B76C-EA11631F866C}</UniqueIdentifier>
+      <Extensions>*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Distribution Files">
+      <UniqueIdentifier>{B83CAF91-C7BF-462F-B76C-EA11631F866C}</UniqueIdentifier>
+      <Extensions>*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Header Files\Core">
+      <UniqueIdentifier>{aba67ae6-52c0-4056-9290-a8c719894499}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Core\Animations">
+      <UniqueIdentifier>{2f60c1a2-ab3e-45ac-af0a-31eec356e53b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Core\Components">
+      <UniqueIdentifier>{8944ad4d-fa19-4ad3-9a02-205e1802e30e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Core\DataClass">
+      <UniqueIdentifier>{a1bd1188-dc1c-47e3-8d25-f54163684fea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Core\Widget">
+      <UniqueIdentifier>{c1b8885f-608b-446c-9b21-00e3e7564d71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Core\Animations\Container">
+      <UniqueIdentifier>{08813222-d60f-472f-8876-4500c2ab125d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Core\Animations\Item">
+      <UniqueIdentifier>{16ed89c1-303d-431e-a670-b529fa103be1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Widget">
+      <UniqueIdentifier>{2ff5bbcf-63ea-4e3d-b6aa-f557929a1b32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Core">
+      <UniqueIdentifier>{d8adeaab-8531-4028-a4b8-b43032c026ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Core\Animations">
+      <UniqueIdentifier>{c9593386-c372-4cd8-a3b2-4e712c0fcd64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Core\Components">
+      <UniqueIdentifier>{e421f0b1-ec26-40c3-bf14-3abe843a00aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Core\DataClass">
+      <UniqueIdentifier>{6e7082d4-1399-4794-a2a3-9272e16b0374}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Core\Widget">
+      <UniqueIdentifier>{931243f5-9dfa-4100-9eba-8124c0dc534c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Core\Animations\Container">
+      <UniqueIdentifier>{9959c77f-c0a4-43d0-8c6f-fd681ecf6d1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Core\Animations\Item">
+      <UniqueIdentifier>{58ce2529-0e11-4416-924e-4ead0393d550}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Widget">
+      <UniqueIdentifier>{fb230f63-d7b0-46e1-b24e-5bfc52d6c4bd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Animations\ContainerAnimation\BarrageAnimation.cpp">
+      <Filter>Source Files\Core\Animations\Container</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Widget\BarrageWidget.cpp">
+      <Filter>Source Files\Core\Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\DataClass\CBDataBase.cpp">
+      <Filter>Source Files\Core\DataClass</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Components\CBVerticalScreenComponent.cpp">
+      <Filter>Source Files\Core\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\DataClass\CBVerticalScreenData.cpp">
+      <Filter>Source Files\Core\DataClass</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Components\ComponentBase.cpp">
+      <Filter>Source Files\Core\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Widget\WidgetBase.cpp">
+      <Filter>Source Files\Core\Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="widget\barrageedit.cpp">
+      <Filter>Source Files\Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="videoview.cpp">
+      <Filter>Source Files\Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="widget\videocontrol.cpp">
+      <Filter>Source Files\Widget</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Core\Widget\BarrageWidget.h">
+      <Filter>Header Files\Core\Widget</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Core\Components\ComponentBase.h">
+      <Filter>Header Files\Core\Components</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Core\Widget\WidgetBase.h">
+      <Filter>Header Files\Core\Widget</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Core\BarrageCore.h">
+      <Filter>Header Files\Core</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Core\DynObjectFactory.h">
+      <Filter>Header Files\Core</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Core\Components\CBVerticalScreenComponent.h">
+      <Filter>Header Files\Core\Components</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Core\DataClass\CBDataBase.h">
+      <Filter>Header Files\Core\DataClass</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Core\DataClass\CBVerticalScreenData.h">
+      <Filter>Header Files\Core\DataClass</Filter>
+    </CustomBuild>
+    <CustomBuild Include="resource\color\Black.png">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="resource\color\Blue.png">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="resource\color\Green.png">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="resource\color\Indigo.png">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="resource\color\Orange.png">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="resource\color\Origin.png">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="resource\color\Purple.png">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="resource\color\Red.png">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="resource\color\White.png">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="resource\color\Yellow.png">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="resource\barrageStyle.png">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="resource\off.png">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="resource\on.png">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="resource\video_menu.png">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="resource\video_pause.png">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="resource\video_play.png">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="resource\video_volumn.png">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="cn.ts">
+      <Filter>Distribution Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="debug\moc_BarrageAnimation.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_BarrageAnimation.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_BarrageWidget.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_BarrageWidget.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_ComponentBase.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_ComponentBase.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_WidgetBase.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_WidgetBase.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_barrageedit.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_barrageedit.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_videocontrol.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_videocontrol.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\moc_videoview.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\moc_videoview.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\qrc_QBarrage.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="release\qrc_QBarrage.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="QBarrage.qrc">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Core\Animations\ContainerAnimation\BarrageAnimation.h">
+      <Filter>Header Files\Core\Animations\Container</Filter>
+    </CustomBuild>
+    <CustomBuild Include="widget\barrageedit.h">
+      <Filter>Header Files\Widget</Filter>
+    </CustomBuild>
+    <CustomBuild Include="widget\videocontrol.h">
+      <Filter>Header Files\Widget</Filter>
+    </CustomBuild>
+    <CustomBuild Include="videoview.h">
+      <Filter>Header Files\Widget</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

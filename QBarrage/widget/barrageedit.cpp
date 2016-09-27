@@ -1,5 +1,5 @@
 #include "barrageedit.h"
-#include "barragecore.h"
+#include "Core/barragecore.h"
 
 #include <QMenu>
 #include <QKeyEvent>

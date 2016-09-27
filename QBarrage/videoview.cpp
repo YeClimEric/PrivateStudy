@@ -1,11 +1,11 @@
 #include "videoview.h"
 #include "videocontrol.h"
-#include "BarrageCore/Widget/BarrageWidget.h"
+#include "Core\Widget/BarrageWidget.h"
 
-#include <QVideoWidget>
+#include <QMediaPlayer>
 #include <QBoxLayout>
 
-#include "BarrageCore/DataClass/CBVerticalScreenData.h"
+#include "Core\DataClass/CBVerticalScreenData.h"
 
 VideoView::VideoView(QWidget *parent)
     : QWidget(parent)

@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QMediaPlayer>
+#include <QVideoWidget>
 
 class QVideoWidget;
 class VideoControl;
