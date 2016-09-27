@@ -1,15 +1,15 @@
 #include <QPropertyAnimation>
 #include "barragewidget.h"
-#include "barragecore.h"
-#include "barrageanimation.h"
-#include "Components/BarrageComponentBase.h"
-#include "Components/CBVerticalScreenComponent.h"
-#include "dynobjectfactory.h"
+#include "../barragecore.h"
+#include "../Animations/ContainerAnimation/barrageanimation.h"
+#include "../Components/ComponentBase.h"
+#include "../Components/CBVerticalScreenComponent.h"
+#include "../dynobjectfactory.h"
 #include <QVariant>
 
-CBarrageWidget::CBarrageWidget(QWidget* parent, QString asComponentName /*= "CBarrageComponentBase"*/)
+CBarrageWidget::CBarrageWidget(QWidget* parent, QString asComponentName /*= "CComponentBase"*/)
 : CBarrageWdgBase(parent, asComponentName),
-  m_iLineCount(2),
+  m_iLineCount(5),
   m_iBarrageIntervalLength(70)
 {
     setWindowFlags(Qt::SubWindow | Qt::FramelessWindowHint | Qt::Window);
@@ -110,7 +110,7 @@ void CBarrageWidget::onCurrentValueChanged(const QVariant &val)
     if(pAnim == nullptr)
         return;
 
-    CBarrageComponentBase* pTarget = dynamic_cast<CBarrageComponentBase*>(pAnim->targetObject());
+    CComponentBase* pTarget = dynamic_cast<CComponentBase*>(pAnim->targetObject());
     if((pTarget == nullptr) || pTarget->parent() == nullptr)
         return;
 
@@ -122,7 +122,7 @@ void CBarrageWidget::onCurrentValueChanged(const QVariant &val)
     if (oList.size() == 0)
         return;
 
-    CBarrageComponentBase* pLastTarget = dynamic_cast<CBarrageComponentBase*>(oList.last());
+    CComponentBase* pLastTarget = dynamic_cast<CComponentBase*>(oList.last());
     if ((pLastTarget == nullptr) ||
         (pLastTarget != pTarget))
     {

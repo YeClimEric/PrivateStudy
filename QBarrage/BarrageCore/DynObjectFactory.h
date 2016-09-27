@@ -11,7 +11,7 @@ typedef  void *(*CREATE_FUNC)(QWidget*);
 class CDynObjectFactory
 {
 public:
-     static  void *CreateObject( const QString &name, QWidget* parent)
+    static  void *CreateObject( const QString &name, QWidget* parent)
     {
         QMap<QString, CREATE_FUNC>::const_iterator it;
         it = mapCls_.find(name);
@@ -19,7 +19,6 @@ public:
              return  0;
          else
              it.value()(parent);
-
     }
 
      static  void Register( const QString &name, CREATE_FUNC func)
@@ -31,9 +30,9 @@ private:
 };
 
 // g++
-// __attribute ((weak))
+//__attribute ((weak))
 __declspec(selectany) QMap<QString, CREATE_FUNC> CDynObjectFactory::mapCls_;
-//头文件被包含多次，也只定义一次mapCls_;
+//头文件被包含多次，也只定义一次mapCls_,但是mingw和vs的支持度不一样，在vs下可以，mingw不行，还是会重新定义;
 
 class Register
 {

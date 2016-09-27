@@ -1,11 +1,11 @@
 #include "videoview.h"
 #include "videocontrol.h"
-#include "barragewidget.h"
+#include "BarrageCore/Widget/BarrageWidget.h"
 
 #include <QVideoWidget>
 #include <QBoxLayout>
 
-#include "DataClass/CBVerticalScreenData.h"
+#include "BarrageCore/DataClass/CBVerticalScreenData.h"
 
 VideoView::VideoView(QWidget *parent)
     : QWidget(parent)
@@ -138,7 +138,7 @@ void VideoView::addBarrageChanged(const QString &str)
 
 void VideoView::pushBarrageChanged(bool on)
 {
-    m_barrageCore->barrageStateChanged(on);
+    m_barrageCore->StateChanged(on);
 }
 
 void VideoView::barrageSizeButtonChanged(int size)

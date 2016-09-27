@@ -4,10 +4,10 @@
 #include <QWidget>
 #include <QVBoxLayout>
 
-#include "BarrageWdgBase.h"
+#include "WidgetBase.h"
 
 class CBarrageAnimation;
-class CBarrageComponentBase;
+class CComponentBase;
 class CBDataBase;
 
 class CBarrageWidget : public CBarrageWdgBase

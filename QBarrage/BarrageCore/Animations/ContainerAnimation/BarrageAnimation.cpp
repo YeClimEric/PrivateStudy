@@ -1,6 +1,5 @@
-#include "StdAfx.h"
 #include "barrageanimation.h"
-#include "barragecore.h"
+#include "../../barragecore.h"
 
 CBarrageAnimation::CBarrageAnimation(QWidget *parent)
     : QPropertyAnimation(parent),

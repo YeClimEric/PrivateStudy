@@ -48,29 +48,29 @@ TRANSLATIONS += cn.ts
 SOURCES += \
         main.cpp \
         videoview.cpp \
-    BarrageCore/BarrageAnimation.cpp \
-    BarrageCore/BarrageWidget.cpp \
-    BarrageCore/Components/BarrageComponentBase.cpp \
+    BarrageCore/Components/ComponentBase.cpp \
     widget/videocontrol.cpp \
     widget/barrageedit.cpp \
-    BarrageCore/BarrageWdgBase.cpp \
     BarrageCore/DataClass/CBDataBase.cpp \
     BarrageCore/DataClass/CBVerticalScreenData.cpp \
-    BarrageCore/Components/CBVerticalScreenComponent.cpp
+    BarrageCore/Components/CBVerticalScreenComponent.cpp \
+    BarrageCore/Widget/WidgetBase.cpp \
+    BarrageCore/Widget/BarrageWidget.cpp \
+    BarrageCore/Animations/ContainerAnimation/BarrageAnimation.cpp
 
 HEADERS  += \
         videoview.h \
-    BarrageCore/BarrageAnimation.h \
     BarrageCore/BarrageCore.h \
-    BarrageCore/BarrageWidget.h \
-    BarrageCore/Components/BarrageComponentBase.h \
     widget/videocontrol.h \
     widget/barrageedit.h \
-    BarrageCore/BarrageWdgBase.h \
     BarrageCore/DataClass/CBVerticalScreenData.h \
     BarrageCore/DataClass/CBDataBase.h \
     BarrageCore/DynObjectFactory.h \
-    BarrageCore/Components/CBVerticalScreenComponent.h
+    BarrageCore/Components/CBVerticalScreenComponent.h \
+    BarrageCore/Widget/BarrageWidget.h \
+    BarrageCore/Animations/ContainerAnimation/BarrageAnimation.h \
+    BarrageCore/Components/ComponentBase.h \
+    BarrageCore/Widget/WidgetBase.h
 
 
 RESOURCES+= QBarrage.qrc

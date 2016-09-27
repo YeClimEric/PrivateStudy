@@ -24,6 +24,7 @@ Item {
             PathLine { x: root.width/2; y: root.height*0.6; }
             PathPercent { value: 0.52; }
             PathLine { x: root.width/2; y: root.height; }
+//            PathQuad { x: root.width/2; y: root.height; }
             PathAttribute { name: "itemAngle"; value: 90.0; }
             PathAttribute { name: "itemScale"; value: 0.5; }
             PathAttribute { name: "itemZ"; value: 0 }
@@ -33,6 +34,8 @@ Item {
 
         preferredHighlightBegin: 0.5
         preferredHighlightEnd: 0.5
+
+
     }
     Component {
         id: flipCardDelegate

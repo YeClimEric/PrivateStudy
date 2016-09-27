@@ -3,17 +3,17 @@
 
 #include <QWidget>
 #include <QLabel>
-#include "DynObjectFactory.h"
+#include "../DynObjectFactory.h"
 
 class CBDataBase;
 
-class CBarrageComponentBase : public QWidget
+class CComponentBase : public QWidget
 {
     Q_OBJECT
 
 public:
-    CBarrageComponentBase(QWidget *parent);
-    ~CBarrageComponentBase();
+    CComponentBase(QWidget *parent);
+    ~CComponentBase();
 
     //写入弹幕的数据，子类实现
     virtual void setData(const CBDataBase* data){}
@@ -24,6 +24,6 @@ private:
 };
 
 //类注册
-REGISTER_CLASS(CBarrageComponentBase);
+REGISTER_CLASS(CComponentBase);
 
 #endif // BARRAGECOMPONENTBASE_H

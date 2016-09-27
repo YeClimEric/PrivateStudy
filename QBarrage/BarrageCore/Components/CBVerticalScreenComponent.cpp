@@ -8,7 +8,7 @@
 #define  DEF_TOP_AN_BOTTOM_MARGIN  8
 
 CBVerticalScreenComponent::CBVerticalScreenComponent(QWidget* parent):
-    CBarrageComponentBase(parent),
+    CComponentBase(parent),
     m_pMainLayout(nullptr),
     m_pSenderNameLabel(nullptr),
     m_pDesLabel(nullptr)

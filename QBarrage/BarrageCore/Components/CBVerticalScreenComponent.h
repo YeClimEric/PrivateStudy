@@ -2,8 +2,8 @@
 #define CBVERTICALSCREENCOMPONENT_H
 
 #include <QWidget>
-#include "DynObjectFactory.h"
-#include "BarrageComponentBase.h"
+#include "../DynObjectFactory.h"
+#include "ComponentBase.h"
 
 
 class QLabel;
@@ -11,7 +11,7 @@ class QHBoxLayout;
 
 class CBDataBase;
 
-class CBVerticalScreenComponent : public CBarrageComponentBase
+class CBVerticalScreenComponent : public CComponentBase
 {
 public:
     CBVerticalScreenComponent(QWidget* parent);

@@ -5,7 +5,7 @@
 
 #include <QList>
 
-class CBarrageComponentBase;
+class CComponentBase;
 class CBDataBase;
 class CBarrageAnimation;
 
@@ -34,16 +34,16 @@ public:
 
 protected:
     virtual void deleteItems();
-    virtual void createAnimation(CBarrageComponentBase *apComp);
+    virtual void createAnimation(CComponentBase *apComp);
 
-    inline QList<CBarrageComponentBase*>& getComponentsList(){ return m_lsComponent; }
+    inline QList<CComponentBase*>& getComponentsList(){ return m_lsComponent; }
     inline QList<CBarrageAnimation*> &getAnimationList(){ return m_lsAnimations; }
     inline QList<CBDataBase*> &getDataBaseList(){ return m_lsBarrageData; }
 
 public slots:
-    virtual void barrageStateChanged(bool on);
+    virtual void StateChanged(bool on);
     virtual void animationFinished();
-    virtual void onCurrentValueChanged(const QVariant  &val){};
+    virtual void onCurrentValueChanged(const QVariant  &val){}
 
 
 
@@ -53,7 +53,7 @@ private:
     QStringList m_lsComponentsName;
     bool m_barrageState;
     QSize m_parentSize;
-    QList<CBarrageComponentBase*> m_lsComponent;
+    QList<CComponentBase*> m_lsComponent;
     QList<CBarrageAnimation*> m_lsAnimations;
     QList<CBDataBase*> m_lsBarrageData;
 };

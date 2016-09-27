@@ -1,12 +1,12 @@
 #include <QPropertyAnimation>
-#include "BarrageWdgBase.h"
-#include "barragecore.h"
-#include "barrageanimation.h"
-#include "Components/BarrageComponentBase.h"
-#include "Components/CBVerticalScreenComponent.h"
-#include "DynObjectFactory.h"
+#include "WidgetBase.h"
+#include "../barragecore.h"
+#include "../Animations/ContainerAnimation/barrageanimation.h"
+#include "../Components/ComponentBase.h"
+#include "../Components/CBVerticalScreenComponent.h"
+#include "../DynObjectFactory.h"
 
-#include "Components/BarrageComponentBase.h"
+#include "../Components/ComponentBase.h"
 
 CBarrageWdgBase::CBarrageWdgBase(QWidget *parent, QString asComponentName):
 QWidget(parent),
@@ -80,7 +80,7 @@ void CBarrageWdgBase::addBarrage(CBDataBase *apData)
 {
     BarrageCore::timeSRand();
     int index = qrand() % m_lsComponentsName.size();
-    CBarrageComponentBase *pComp = static_cast<CBarrageComponentBase*>(CDynObjectFactory::CreateObject(m_lsComponentsName[index], this));
+    CComponentBase *pComp = static_cast<CComponentBase*>(CDynObjectFactory::CreateObject(m_lsComponentsName[index], this));
     if(pComp == nullptr)
         return;
     pComp->setData(apData);
@@ -89,7 +89,7 @@ void CBarrageWdgBase::addBarrage(CBDataBase *apData)
     start();
 }
 
-void CBarrageWdgBase::barrageStateChanged(bool on)
+void CBarrageWdgBase::StateChanged(bool on)
 {
 
 }
@@ -109,7 +109,7 @@ void CBarrageWdgBase::deleteItems()
     }
 }
 
-void CBarrageWdgBase::createAnimation(CBarrageComponentBase *apComp)
+void CBarrageWdgBase::createAnimation(CComponentBase *apComp)
 {
     CBarrageAnimation *anim = new CBarrageAnimation(apComp, "pos");
     connect(anim, SIGNAL(finished()), this, SLOT(animationFinished()));
@@ -128,7 +128,7 @@ void CBarrageWdgBase::animationFinished()
         return;
 
 
-    CBarrageComponentBase* pComp = dynamic_cast<CBarrageComponentBase*>(pAnim->targetObject());
+    CComponentBase* pComp = dynamic_cast<CComponentBase*>(pAnim->targetObject());
     if(pComp == nullptr)
         return;
     int iCompIndex = m_lsComponent.indexOf(pComp);
