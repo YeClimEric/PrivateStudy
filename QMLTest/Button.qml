@@ -21,6 +21,11 @@ Item{
                 root.clicked()
             }
         }
+
+        Image {
+            id: image
+            source: "qrc:/image/pinwheel.png"
+        }
     }
 }
 
