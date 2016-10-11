@@ -2,10 +2,10 @@
 #define CBDATABASE_H
 
 
-class CBDataBase
+class CDataBase
 {
 public:
-    CBDataBase();
+    CDataBase();
 };
 
 #endif // CBDATABASE_H

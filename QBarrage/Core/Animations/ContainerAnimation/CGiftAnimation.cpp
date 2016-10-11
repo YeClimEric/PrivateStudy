@@ -1,6 +1,12 @@
 #include "CGiftAnimation.h"
 
-CGiftAnimation::CGiftAnimation()
+CGiftAnimation::CGiftAnimation(QWidget *parent):
+    QPropertyAnimation(parent)
+{
+
+}
+
+CGiftAnimation::CGiftAnimation(QWidget *target, const QByteArray &propertyName, QWidget *parent)
 {
 
 }

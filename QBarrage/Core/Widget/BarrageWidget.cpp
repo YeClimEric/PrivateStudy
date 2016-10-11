@@ -8,7 +8,7 @@
 #include <QVariant>
 
 CBarrageWidget::CBarrageWidget(QWidget* parent, QString asComponentName /*= "CComponentBase"*/)
-: CBarrageWdgBase(parent, asComponentName),
+: CWidgetBase(parent, asComponentName),
   m_iLineCount(5),
   m_iBarrageIntervalLength(70)
 {

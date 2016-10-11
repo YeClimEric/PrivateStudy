@@ -8,7 +8,7 @@
 
 #include "../Components/ComponentBase.h"
 
-CBarrageWdgBase::CBarrageWdgBase(QWidget *parent, QString asComponentName):
+CWidgetBase::CWidgetBase(QWidget *parent, QString asComponentName):
 QWidget(parent),
 m_sComponentName(asComponentName),
 m_barrageState(true)
@@ -16,7 +16,7 @@ m_barrageState(true)
     m_lsComponentsName << m_sComponentName;
 }
 
-CBarrageWdgBase::CBarrageWdgBase(QWidget* parent, QStringList alsComponentsName):
+CWidgetBase::CWidgetBase(QWidget* parent, QStringList alsComponentsName):
 QWidget(parent),
 m_lsComponentsName(alsComponentsName),
 m_barrageState(true)
@@ -24,12 +24,12 @@ m_barrageState(true)
 
 }
 
-CBarrageWdgBase::~CBarrageWdgBase()
+CWidgetBase::~CWidgetBase()
 {
 
 }
 
-void CBarrageWdgBase::onShow(bool abShow)
+void CWidgetBase::onShow(bool abShow)
 {
     if (abShow && m_barrageState)
     {
@@ -43,7 +43,7 @@ void CBarrageWdgBase::onShow(bool abShow)
 
 }
 
-void CBarrageWdgBase::start()
+void CWidgetBase::start()
 {
     if(m_barrageState)
     {
@@ -55,7 +55,7 @@ void CBarrageWdgBase::start()
     }
 }
 
-void CBarrageWdgBase::pause()
+void CWidgetBase::pause()
 {
     if(m_barrageState)
     {
@@ -67,7 +67,7 @@ void CBarrageWdgBase::pause()
     }
 }
 
-void CBarrageWdgBase::stop()
+void CWidgetBase::stop()
 {
     for(int i = 0; i < m_lsComponent.count(); i++)
     {
@@ -76,7 +76,7 @@ void CBarrageWdgBase::stop()
     }
 }
 
-void CBarrageWdgBase::addBarrage(CBDataBase *apData)
+void CWidgetBase::addBarrage(CDataBase *apData)
 {
     BarrageCore::timeSRand();
     int index = qrand() % m_lsComponentsName.size();
@@ -89,18 +89,18 @@ void CBarrageWdgBase::addBarrage(CBDataBase *apData)
     start();
 }
 
-void CBarrageWdgBase::StateChanged(bool on)
+void CWidgetBase::StateChanged(bool on)
 {
 
 }
 
-void CBarrageWdgBase::setSize(const QSize &size)
+void CWidgetBase::setSize(const QSize &size)
 {
     m_parentSize = size;
     setFixedSize(size);
 }
 
-void CBarrageWdgBase::deleteItems()
+void CWidgetBase::deleteItems()
 {
     while(!m_lsComponent.isEmpty())
     {
@@ -109,7 +109,7 @@ void CBarrageWdgBase::deleteItems()
     }
 }
 
-void CBarrageWdgBase::createAnimation(CComponentBase *apComp)
+void CWidgetBase::createAnimation(CComponentBase *apComp)
 {
     CBarrageAnimation *anim = new CBarrageAnimation(apComp, "pos");
     connect(anim, SIGNAL(finished()), this, SLOT(animationFinished()));
@@ -118,7 +118,7 @@ void CBarrageWdgBase::createAnimation(CComponentBase *apComp)
     m_lsAnimations << anim;
 }
 
-void CBarrageWdgBase::animationFinished()
+void CWidgetBase::animationFinished()
 {
     CBarrageAnimation* pAnim = dynamic_cast<CBarrageAnimation*>(sender());
     if(pAnim == nullptr)

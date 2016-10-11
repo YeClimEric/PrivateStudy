@@ -1,6 +1,18 @@
 #include "CGiftComponent.h"
 
-CGiftComponent::CGiftComponent()
+
+CGiftComponent::CGiftComponent(QWidget *parent):
+    CComponentBase(parent)
+{
+
+}
+
+CGiftComponent::~CGiftComponent()
+{
+
+}
+
+void CGiftComponent::setData(const CDataBase *acpData)
 {
 
 }

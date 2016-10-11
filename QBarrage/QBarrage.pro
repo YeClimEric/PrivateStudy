@@ -53,7 +53,11 @@ SOURCES += \
     Core/Components/CBVerticalScreenComponent.cpp \
     Core/Widget/WidgetBase.cpp \
     Core/Widget/BarrageWidget.cpp \
-    Core/Animations/ContainerAnimation/BarrageAnimation.cpp
+    Core/Animations/ContainerAnimation/BarrageAnimation.cpp \
+    Core/Widget/CGiftWidget.cpp \
+    Core/DataClass/CGiftData.cpp \
+    Core/Components/CGiftComponent.cpp \
+    Core/Animations/ContainerAnimation/CGiftAnimation.cpp
 
 HEADERS  += \
         videoview.h \
@@ -67,7 +71,11 @@ HEADERS  += \
     Core/Widget/BarrageWidget.h \
     Core/Animations/ContainerAnimation/BarrageAnimation.h \
     Core/Components/ComponentBase.h \
-    Core/Widget/WidgetBase.h
+    Core/Widget/WidgetBase.h \
+    Core/Widget/CGiftWidget.h \
+    Core/DataClass/CGiftData.h \
+    Core/Components/CGiftComponent.h \
+    Core/Animations/ContainerAnimation/CGiftAnimation.h
 
 
 RESOURCES+= QBarrage.qrc
@@ -79,5 +87,3 @@ RESOURCES+= QBarrage.qrc
 #        ui/weatherapplication.ui \
 #        ui/weathermessagebox.ui
 
-DISTFILES += \
-    cn.ts

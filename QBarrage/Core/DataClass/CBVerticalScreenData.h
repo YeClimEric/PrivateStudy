@@ -6,7 +6,7 @@
 
 struct STRU_TVSHOW_UI_BARRAGE_APPEND_DATA{};
 
-class CBVerticalScreenData : public CBDataBase
+class CBVerticalScreenData : public CDataBase
 {
 public:
     CBVerticalScreenData();

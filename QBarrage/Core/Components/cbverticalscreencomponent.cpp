@@ -1,5 +1,5 @@
 #include "CBVerticalScreenComponent.h"
-#include "../Core/DataClass/cbverticalscreendata.h"
+#include "../DataClass/cbverticalscreendata.h"
 
 #include <QHBoxLayout>
 #include <QLabel>
@@ -48,12 +48,12 @@ CBVerticalScreenComponent::~CBVerticalScreenComponent()
     m_pRightLabel = nullptr;
 }
 
-void CBVerticalScreenComponent::setData(const CBDataBase* acpData)
+void CBVerticalScreenComponent::setData(const CDataBase* acpData)
 {
     if(acpData == nullptr)
         return;
 
-    CBDataBase* pDataBase = const_cast<CBDataBase*>(acpData);
+    CDataBase* pDataBase = const_cast<CDataBase*>(acpData);
     if(pDataBase == nullptr)
         return;
     CBVerticalScreenData* pVerticalData = (CBVerticalScreenData*)pDataBase;

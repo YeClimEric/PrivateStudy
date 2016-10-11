@@ -1,6 +1,6 @@
 #include "CBDataBase.h"
 
-CBDataBase::CBDataBase()
+CDataBase::CDataBase()
 {
 
 }

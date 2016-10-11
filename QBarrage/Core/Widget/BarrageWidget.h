@@ -8,9 +8,9 @@
 
 class CBarrageAnimation;
 class CComponentBase;
-class CBDataBase;
+class CDataBase;
 
-class CBarrageWidget : public CBarrageWdgBase
+class CBarrageWidget : public CWidgetBase
 {
     Q_OBJECT
 public:

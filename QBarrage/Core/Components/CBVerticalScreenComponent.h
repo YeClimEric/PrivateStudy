@@ -2,14 +2,13 @@
 #define CBVERTICALSCREENCOMPONENT_H
 
 #include <QWidget>
-#include "../DynObjectFactory.h"
 #include "ComponentBase.h"
 
 
 class QLabel;
 class QHBoxLayout;
 
-class CBDataBase;
+class CDataBase;
 
 class CBVerticalScreenComponent : public CComponentBase
 {
@@ -18,7 +17,7 @@ public:
     ~CBVerticalScreenComponent();
 
     //写入弹幕的数据
-    virtual void setData(const CBDataBase* acpData);
+    virtual void setData(const CDataBase* acpData);
 
 private:
     void setStyle();

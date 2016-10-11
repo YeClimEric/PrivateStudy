@@ -6,17 +6,17 @@
 #include <QList>
 
 class CComponentBase;
-class CBDataBase;
+class CDataBase;
 class CBarrageAnimation;
 
-class CBarrageWdgBase : public QWidget
+class CWidgetBase : public QWidget
 {
 	Q_OBJECT
 
 public:
-	CBarrageWdgBase(QWidget *parent, QString asComponentName);
-    CBarrageWdgBase(QWidget* parent, QStringList alsComponentsName);
-	~CBarrageWdgBase();
+	CWidgetBase(QWidget *parent, QString asComponentName);
+    CWidgetBase(QWidget* parent, QStringList alsComponentsName);
+	~CWidgetBase();
 
 public:
     virtual void onShow(bool abShow);
@@ -26,7 +26,7 @@ public:
     virtual void pause();
     virtual void stop();
 
-    virtual void addBarrage(CBDataBase *apData);
+    virtual void addBarrage(CDataBase *apData);
     virtual void setSize(const QSize &size);
 
     inline void setBarrageState(bool asState){ m_barrageState = asState; }
@@ -38,7 +38,7 @@ protected:
 
     inline QList<CComponentBase*>& getComponentsList(){ return m_lsComponent; }
     inline QList<CBarrageAnimation*> &getAnimationList(){ return m_lsAnimations; }
-    inline QList<CBDataBase*> &getDataBaseList(){ return m_lsBarrageData; }
+    inline QList<CDataBase*> &getDataBaseList(){ return m_lsBarrageData; }
 
 public slots:
     virtual void StateChanged(bool on);
@@ -55,7 +55,7 @@ private:
     QSize m_parentSize;
     QList<CComponentBase*> m_lsComponent;
     QList<CBarrageAnimation*> m_lsAnimations;
-    QList<CBDataBase*> m_lsBarrageData;
+    QList<CDataBase*> m_lsBarrageData;
 };
 
 #endif // BARRAGEWDGBASE_H

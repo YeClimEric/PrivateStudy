@@ -5,7 +5,7 @@
 #include <QLabel>
 #include "../DynObjectFactory.h"
 
-class CBDataBase;
+class CDataBase;
 
 class CComponentBase : public QWidget
 {
@@ -16,7 +16,7 @@ public:
     ~CComponentBase();
 
     //写入弹幕的数据，子类实现
-    virtual void setData(const CBDataBase* data){}
+    virtual void setData(const CDataBase* data){}
 
 private:
 
