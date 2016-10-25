@@ -11,5 +11,7 @@
         <file>ParticalSimulation.qml</file>
         <file>image/star.png</file>
         <file>Tracer.qml</file>
+        <file>ParticleGroupDemo.qml</file>
+        <file>image/rocket.png</file>
     </qresource>
 </RCC>

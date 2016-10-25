@@ -8,10 +8,15 @@ Window {
     width:480; height:320
     title: qsTr("Hello World")
 
-    ParticalSimulation{
+    ParticleGroupDemo{
         x:0; y:0
-        width: parent.width; height: parent.height
+        width: parent.width; height:parent.height
     }
+
+    //ParticalSimulation{
+    //    x:0; y:0
+    //    width: parent.width; height: parent.height
+    //}
 
     //CanvasBase{
     //    x:100; y:20
