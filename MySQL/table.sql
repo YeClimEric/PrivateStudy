@@ -54,3 +54,5 @@ alter table t_dept modify deptno int(20) unique;
 alter table t_dept modify deptno int(20) primary key;
 
 alter table t_dept2 add constraint fk_deptno foreign key(deptno) references t_dept(deptno);
+
+alter table t_dept add index index_deptno(deptno);
