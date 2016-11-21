@@ -13,6 +13,7 @@ create table t_dept(
 describe t_dept;
 #删除表
 drop table t_dept;
+drop table t_dept2;
 #修改表名 
 alter table t_dept rename t_dept2;
 
@@ -52,3 +53,4 @@ alter table t_dept modify dname varchar(20) default "name";
 alter table t_dept modify deptno int(20) unique;
 alter table t_dept modify deptno int(20) primary key;
 
+alter table t_dept2 add constraint fk_deptno foreign key(deptno) references t_dept(deptno);
