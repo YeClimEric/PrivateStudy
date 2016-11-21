@@ -1,0 +1,7 @@
+*.[ao]
+moc_*.cpp
+ui_*.h
+*.exe
+Makefile[.]?*
+Makefile
+build*

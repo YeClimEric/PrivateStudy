@@ -1,0 +1,25 @@
+QPushButton{
+    color:rgb(255,255,255);
+    background:rgb(167,205,255);
+    border:none;
+    padding:3px;
+    font-family:"Verdana";
+    font-size:15px;
+    text-align:center
+}
+QPushButton:hover, QPushButton:pressed, QPushButton:checked{
+    background:rgb(85,170,255);
+    text-align:left;
+    padding-right:20px;
+    font-weight:100
+}
+
+QToolButton#aa:pressed{
+    color: red
+    }
+QTableWidget{
+    color:red;
+    border:none;
+    padding:5px
+    
+    }

@@ -1,0 +1,665 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{893B2142-0128-38F5-BA03-134B21399FC2}</ProjectGuid>
+    <RootNamespace>QBarrage</RootNamespace>
+    <Keyword>Qt4VSv1.0</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <PlatformToolSet>v140</PlatformToolSet>
+    <OutputDirectory>release\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>release\</IntermediateDirectory>
+    <PrimaryOutput>QBarrage</PrimaryOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <PlatformToolSet>v140</PlatformToolSet>
+    <OutputDirectory>debug\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>debug\</IntermediateDirectory>
+    <PrimaryOutput>QBarrage</PrimaryOutput>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">QBarrage</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">QBarrage</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</IgnoreImportLibrary>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;E:/GitDataBase/Qt/QBarrage/BarrageCore;widget;E:/GitDataBase/Qt/QBarrage/Components;.;$(QTDIR)\include;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtCore;release;$(QTDIR)\mkspecs\win32-msvc2015;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:strictStrings -Zc:throwingNew -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>release\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <DisableSpecificWarnings>4577;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>release\</ObjectFileName>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;QT_NO_DEBUG;QT_MULTIMEDIAWIDGETS_LIB;QT_WIDGETS_LIB;QT_MULTIMEDIA_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <ProgramDataBaseFileName>
+      </ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>qtmain.lib;shell32.lib;Qt5MultimediaWidgets.lib;Qt5Widgets.lib;Qt5Multimedia.lib;Qt5Gui.lib;Qt5Network.lib;Qt5Core.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;C:\utils\postgresql\pgsql\lib;C:\utils\my_sql\my_sql\lib;$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkIncremental>false</LinkIncremental>
+      <OutputFile>$(OutDir)\QBarrage.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;QT_NO_DEBUG;QT_MULTIMEDIAWIDGETS_LIB;QT_WIDGETS_LIB;QT_MULTIMEDIA_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;E:/GitDataBase/Qt/QBarrage/BarrageCore;widget;E:/GitDataBase/Qt/QBarrage/Components;.;$(QTDIR)\include;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtCore;debug;$(QTDIR)\mkspecs\win32-msvc2015;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:strictStrings -Zc:throwingNew -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>debug\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4577;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>debug\</ObjectFileName>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;QT_MULTIMEDIAWIDGETS_LIB;QT_WIDGETS_LIB;QT_MULTIMEDIA_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>qtmaind.lib;shell32.lib;Qt5MultimediaWidgetsd.lib;Qt5Widgetsd.lib;Qt5Multimediad.lib;Qt5Guid.lib;Qt5Networkd.lib;Qt5Cored.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;C:\utils\postgresql\pgsql\lib;C:\utils\my_sql\my_sql\lib;$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <OutputFile>$(OutDir)\QBarrage.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;QT_MULTIMEDIAWIDGETS_LIB;QT_WIDGETS_LIB;QT_MULTIMEDIA_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Core\Animations\ContainerAnimation\BarrageAnimation.cpp" />
+    <ClCompile Include="Core\Widget\BarrageWidget.cpp" />
+    <ClCompile Include="Core\DataClass\CBDataBase.cpp" />
+    <ClCompile Include="Core\Components\CBVerticalScreenComponent.cpp" />
+    <ClCompile Include="Core\DataClass\CBVerticalScreenData.cpp" />
+    <ClCompile Include="Core\Components\ComponentBase.cpp" />
+    <ClCompile Include="Core\Widget\WidgetBase.cpp" />
+    <ClCompile Include="widget\barrageedit.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="widget\videocontrol.cpp" />
+    <ClCompile Include="videoview.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Core\Animations\ContainerAnimation\BarrageAnimation.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Core\Animations\ContainerAnimation\BarrageAnimation.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DQT_MULTIMEDIAWIDGETS_LIB -DQT_WIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IE:/GitDataBase/Qt/QBarrage -IE:/GitDataBase/Qt/QBarrage/BarrageCore -IE:/GitDataBase/Qt/QBarrage/widget -IE:/GitDataBase/Qt/QBarrage/Components -IE:/GitDataBase/Qt/QBarrage -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtMultimediaWidgets -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtMultimedia -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtCore Core\Animations\ContainerAnimation\BarrageAnimation.h -o release\moc_BarrageAnimation.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC Core/Animations/ContainerAnimation/BarrageAnimation.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_BarrageAnimation.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Core\Animations\ContainerAnimation\BarrageAnimation.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DQT_MULTIMEDIAWIDGETS_LIB -DQT_WIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IE:/GitDataBase/Qt/QBarrage -IE:/GitDataBase/Qt/QBarrage/BarrageCore -IE:/GitDataBase/Qt/QBarrage/widget -IE:/GitDataBase/Qt/QBarrage/Components -IE:/GitDataBase/Qt/QBarrage -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtMultimediaWidgets -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtMultimedia -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtCore Core\Animations\ContainerAnimation\BarrageAnimation.h -o debug\moc_BarrageAnimation.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC Core/Animations/ContainerAnimation/BarrageAnimation.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_BarrageAnimation.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="Core\BarrageCore.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="Core\Widget\BarrageWidget.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Core\Widget\BarrageWidget.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DQT_MULTIMEDIAWIDGETS_LIB -DQT_WIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IE:/GitDataBase/Qt/QBarrage -IE:/GitDataBase/Qt/QBarrage/BarrageCore -IE:/GitDataBase/Qt/QBarrage/widget -IE:/GitDataBase/Qt/QBarrage/Components -IE:/GitDataBase/Qt/QBarrage -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtMultimediaWidgets -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtMultimedia -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtCore Core\Widget\BarrageWidget.h -o release\moc_BarrageWidget.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC Core/Widget/BarrageWidget.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_BarrageWidget.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Core\Widget\BarrageWidget.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DQT_MULTIMEDIAWIDGETS_LIB -DQT_WIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IE:/GitDataBase/Qt/QBarrage -IE:/GitDataBase/Qt/QBarrage/BarrageCore -IE:/GitDataBase/Qt/QBarrage/widget -IE:/GitDataBase/Qt/QBarrage/Components -IE:/GitDataBase/Qt/QBarrage -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtMultimediaWidgets -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtMultimedia -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtCore Core\Widget\BarrageWidget.h -o debug\moc_BarrageWidget.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC Core/Widget/BarrageWidget.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_BarrageWidget.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="Core\DataClass\CBDataBase.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="Core\Components\CBVerticalScreenComponent.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="Core\DataClass\CBVerticalScreenData.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="Core\Components\ComponentBase.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Core\Components\ComponentBase.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DQT_MULTIMEDIAWIDGETS_LIB -DQT_WIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IE:/GitDataBase/Qt/QBarrage -IE:/GitDataBase/Qt/QBarrage/BarrageCore -IE:/GitDataBase/Qt/QBarrage/widget -IE:/GitDataBase/Qt/QBarrage/Components -IE:/GitDataBase/Qt/QBarrage -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtMultimediaWidgets -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtMultimedia -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtCore Core\Components\ComponentBase.h -o release\moc_ComponentBase.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC Core/Components/ComponentBase.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_ComponentBase.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Core\Components\ComponentBase.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DQT_MULTIMEDIAWIDGETS_LIB -DQT_WIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IE:/GitDataBase/Qt/QBarrage -IE:/GitDataBase/Qt/QBarrage/BarrageCore -IE:/GitDataBase/Qt/QBarrage/widget -IE:/GitDataBase/Qt/QBarrage/Components -IE:/GitDataBase/Qt/QBarrage -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtMultimediaWidgets -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtMultimedia -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtCore Core\Components\ComponentBase.h -o debug\moc_ComponentBase.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC Core/Components/ComponentBase.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_ComponentBase.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="Core\DynObjectFactory.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="Core\Widget\WidgetBase.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Core\Widget\WidgetBase.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DQT_MULTIMEDIAWIDGETS_LIB -DQT_WIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IE:/GitDataBase/Qt/QBarrage -IE:/GitDataBase/Qt/QBarrage/BarrageCore -IE:/GitDataBase/Qt/QBarrage/widget -IE:/GitDataBase/Qt/QBarrage/Components -IE:/GitDataBase/Qt/QBarrage -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtMultimediaWidgets -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtMultimedia -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtCore Core\Widget\WidgetBase.h -o release\moc_WidgetBase.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC Core/Widget/WidgetBase.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_WidgetBase.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Core\Widget\WidgetBase.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DQT_MULTIMEDIAWIDGETS_LIB -DQT_WIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IE:/GitDataBase/Qt/QBarrage -IE:/GitDataBase/Qt/QBarrage/BarrageCore -IE:/GitDataBase/Qt/QBarrage/widget -IE:/GitDataBase/Qt/QBarrage/Components -IE:/GitDataBase/Qt/QBarrage -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtMultimediaWidgets -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtMultimedia -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtCore Core\Widget\WidgetBase.h -o debug\moc_WidgetBase.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC Core/Widget/WidgetBase.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_WidgetBase.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="widget\barrageedit.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">widget\barrageedit.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DQT_MULTIMEDIAWIDGETS_LIB -DQT_WIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IE:/GitDataBase/Qt/QBarrage -IE:/GitDataBase/Qt/QBarrage/BarrageCore -IE:/GitDataBase/Qt/QBarrage/widget -IE:/GitDataBase/Qt/QBarrage/Components -IE:/GitDataBase/Qt/QBarrage -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtMultimediaWidgets -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtMultimedia -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtCore widget\barrageedit.h -o release\moc_barrageedit.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC widget/barrageedit.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_barrageedit.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">widget\barrageedit.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DQT_MULTIMEDIAWIDGETS_LIB -DQT_WIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IE:/GitDataBase/Qt/QBarrage -IE:/GitDataBase/Qt/QBarrage/BarrageCore -IE:/GitDataBase/Qt/QBarrage/widget -IE:/GitDataBase/Qt/QBarrage/Components -IE:/GitDataBase/Qt/QBarrage -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtMultimediaWidgets -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtMultimedia -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtCore widget\barrageedit.h -o debug\moc_barrageedit.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC widget/barrageedit.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_barrageedit.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="widget\videocontrol.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">widget\videocontrol.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DQT_MULTIMEDIAWIDGETS_LIB -DQT_WIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IE:/GitDataBase/Qt/QBarrage -IE:/GitDataBase/Qt/QBarrage/BarrageCore -IE:/GitDataBase/Qt/QBarrage/widget -IE:/GitDataBase/Qt/QBarrage/Components -IE:/GitDataBase/Qt/QBarrage -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtMultimediaWidgets -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtMultimedia -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtCore widget\videocontrol.h -o release\moc_videocontrol.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC widget/videocontrol.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_videocontrol.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">widget\videocontrol.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DQT_MULTIMEDIAWIDGETS_LIB -DQT_WIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IE:/GitDataBase/Qt/QBarrage -IE:/GitDataBase/Qt/QBarrage/BarrageCore -IE:/GitDataBase/Qt/QBarrage/widget -IE:/GitDataBase/Qt/QBarrage/Components -IE:/GitDataBase/Qt/QBarrage -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtMultimediaWidgets -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtMultimedia -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtCore widget\videocontrol.h -o debug\moc_videocontrol.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC widget/videocontrol.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_videocontrol.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="videoview.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">videoview.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DQT_MULTIMEDIAWIDGETS_LIB -DQT_WIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IE:/GitDataBase/Qt/QBarrage -IE:/GitDataBase/Qt/QBarrage/BarrageCore -IE:/GitDataBase/Qt/QBarrage/widget -IE:/GitDataBase/Qt/QBarrage/Components -IE:/GitDataBase/Qt/QBarrage -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtMultimediaWidgets -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtMultimedia -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtCore videoview.h -o release\moc_videoview.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC videoview.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_videoview.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">videoview.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DQT_MULTIMEDIAWIDGETS_LIB -DQT_WIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -D_MSC_VER=1900 -D_WIN32 -D_WIN64 -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/mkspecs/win32-msvc2015 -IE:/GitDataBase/Qt/QBarrage -IE:/GitDataBase/Qt/QBarrage/BarrageCore -IE:/GitDataBase/Qt/QBarrage/widget -IE:/GitDataBase/Qt/QBarrage/Components -IE:/GitDataBase/Qt/QBarrage -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtMultimediaWidgets -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtMultimedia -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtGui -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtNetwork -ID:/Qt/Qt5.7.0_Win/5.7/msvc2015_64/include/QtCore videoview.h -o debug\moc_videoview.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC videoview.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_videoview.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="debug\moc_BarrageAnimation.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_BarrageAnimation.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_BarrageWidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_BarrageWidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_ComponentBase.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_ComponentBase.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_WidgetBase.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_WidgetBase.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_barrageedit.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_barrageedit.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_videocontrol.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_videocontrol.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_videoview.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_videoview.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\qrc_QBarrage.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\qrc_QBarrage.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="resource\color\Black.png">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="resource\color\Blue.png">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="resource\color\Green.png">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="resource\color\Indigo.png">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="resource\color\Orange.png">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="resource\color\Origin.png">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="resource\color\Purple.png">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="QBarrage.qrc">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">QBarrage.qrc;$(QTDIR)\bin\rcc.exe;resource\color\Origin.png;resource\color\Indigo.png;resource\color\Red.png;resource\color\Orange.png;resource\color\Black.png;resource\color\Purple.png;resource\color\Yellow.png;resource\color\Blue.png;resource\color\Green.png;resource\color\White.png;resource\video_pause.png;resource\video_play.png;resource\barrageStyle.png;resource\off.png;resource\video_volumn.png;resource\video_menu.png;resource\on.png;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\rcc.exe -name QBarrage QBarrage.qrc -o release\qrc_QBarrage.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">RCC QBarrage.qrc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\qrc_QBarrage.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">QBarrage.qrc;$(QTDIR)\bin\rcc.exe;resource\color\Origin.png;resource\color\Indigo.png;resource\color\Red.png;resource\color\Orange.png;resource\color\Black.png;resource\color\Purple.png;resource\color\Yellow.png;resource\color\Blue.png;resource\color\Green.png;resource\color\White.png;resource\video_pause.png;resource\video_play.png;resource\barrageStyle.png;resource\off.png;resource\video_volumn.png;resource\video_menu.png;resource\on.png;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\rcc.exe -name QBarrage QBarrage.qrc -o debug\qrc_QBarrage.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">RCC QBarrage.qrc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\qrc_QBarrage.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="resource\color\Red.png">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="resource\color\White.png">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="resource\color\Yellow.png">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="resource\barrageStyle.png">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="resource\off.png">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="resource\on.png">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="resource\video_menu.png">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="resource\video_pause.png">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="resource\video_play.png">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="resource\video_volumn.png">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </AdditionalInputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="cn.ts">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing Custom Build Tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </AdditionalInputs>
+    </CustomBuild>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties Qt5Version_x0020_x64="Qt 5.7.1" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

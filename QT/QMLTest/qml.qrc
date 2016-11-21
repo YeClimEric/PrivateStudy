@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>image/background.png</file>
+        <file>image/pinwheel.png</file>
+        <file>Button.qml</file>
+        <file>ShapeShiftingDelegate.qml</file>
+        <file>ListModelGridViewDelegate.qml</file>
+        <file>PathViewDemo.qml</file>
+        <file>CanvasBase.qml</file>
+        <file>ParticalSimulation.qml</file>
+        <file>image/star.png</file>
+        <file>Tracer.qml</file>
+        <file>ParticleGroupDemo.qml</file>
+        <file>image/rocket.png</file>
+    </qresource>
+</RCC>
