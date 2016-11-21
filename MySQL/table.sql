@@ -1,12 +1,9 @@
 create database company; #创建数据库
 
-use company;#使用数据库
-
-#创建一个表
-create table t_dept(
-	deptno INT,
-    dname varchar(20),
-    loc varchar(40)
+use company;CREATE TABLE t_dept (
+    deptno INT,
+    dname VARCHAR(20),
+    loc VARCHAR(40)
 ); 
 
 #展开表的描述，可用desc
@@ -41,11 +38,10 @@ desc t_dept2;
 alter table t_dept2 modify deptno int after dname;
 alter table t_dept2 modify deptno varchar(20) first;
 
-#设置非空约束
-create table t_dept(
-	deptno int(20) not null,
-    dname varchar(20),
-    location varchar(20)
+CREATE TABLE t_dept (
+    deptno INT(20) NOT NULL,
+    dname VARCHAR(20),
+    location VARCHAR(20)
 );
 desc t_dept;
 alter table t_dept add val varchar(20) default "aaa";
@@ -56,3 +52,20 @@ alter table t_dept modify deptno int(20) primary key;
 alter table t_dept2 add constraint fk_deptno foreign key(deptno) references t_dept(deptno);
 
 alter table t_dept add index index_deptno(deptno);
+create index index_deptno1 on t_dept(deptno);
+explain select * from t_dept;
+
+alter table t_dept drop deptno;
+desc t_dept;
+insert into t_dept(deptno, dname, location) values(2,'aa', 'aa1');
+
+SELECT 
+    *
+FROM
+    t_dept
+WHERE
+    deptno >= 1;
+
+
+
+
