@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/qss">
+        <file>images/Skins.qss</file>
+        <file>images_Blue/Skins.qss</file>
+        <file>images_Dark/Skins.qss</file>
+        <file>images_Green/Skins.qss</file>
+    </qresource>
+    <qresource prefix="/images">
+        <file>images/level.png</file>
+        <file>images_Blue/level.png</file>
+        <file>images_Dark/level.png</file>
+        <file>images_Green/level.png</file>
+    </qresource>
+</RCC>

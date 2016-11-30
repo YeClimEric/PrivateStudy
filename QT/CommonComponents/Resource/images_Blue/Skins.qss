@@ -1,0 +1,5 @@
+/*Blue*/
+QLabel{
+    border-image: url(:/images/images_Blue/level.png);
+}
+

@@ -1,0 +1,5 @@
+/*Default*/
+QLabel{
+    border-image: url(:/images/images/level.png);
+}
+

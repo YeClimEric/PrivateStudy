@@ -1,0 +1,5 @@
+/*Dark*/
+QLabel{
+    border-image: url(:/images/images_Dark/level.png);
+}
+

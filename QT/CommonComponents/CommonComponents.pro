@@ -8,6 +8,8 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
+CONFIG += c++11
+
 TARGET = CommonComponents
 TEMPLATE = app
 
@@ -20,4 +22,4 @@ HEADERS  += Widget.h
 FORMS    += Widget.ui
 
 RESOURCES += \
-    Resource/Default.qrc
+    Resource/Skins.qrc
