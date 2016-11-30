@@ -1,6 +1,7 @@
 create database company; #创建数据库
 
-use company;CREATE TABLE t_dept (
+use company;
+CREATE TABLE t_dept (
     deptno INT,
     dname VARCHAR(20),
     loc VARCHAR(40)

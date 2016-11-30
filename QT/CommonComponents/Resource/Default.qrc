@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/skins">
+        <file>Skins_Default.qss</file>
+    </qresource>
+</RCC>
