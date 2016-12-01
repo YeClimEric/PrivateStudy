@@ -5,6 +5,10 @@
 
 class QWebPage;
 class QWebFrame;
+class QWebView;
+class QNetworkDiskCache;
+class QNetworkAccessManager;
+
 
 namespace Ui {
 class CWebViewWidget;
@@ -24,6 +28,7 @@ public:
 protected:
     QWebPage *GetPage();
     QWebFrame *GetFrame();
+    QWebView *GetWebView();
 
 signals:
     void LinkClicked(const QUrl& url);
@@ -34,9 +39,13 @@ signals:
 
 private:
     void Init();
+    void InitSignals();
+    void InitWebSetting();
 
 private:
     Ui::CWebViewWidget *ui;
+    QNetworkDiskCache *m_pDiskCache;
+    QNetworkAccessManager *m_pNetworkManager;
 };
 
 #endif // CWEBVIEWWIDGET_H

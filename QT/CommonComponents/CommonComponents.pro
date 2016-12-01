@@ -4,15 +4,16 @@
 #
 #-------------------------------------------------
 
-QT       += core gui webkit webkitwidgets
+QT       += core gui webkit network
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets  webkitwidgets
 
 CONFIG += c++11
 
 TARGET = CommonComponents
 TEMPLATE = app
 
+INCLUDEPATH += QtNetwork QtWebKitWidgets
 
 SOURCES += main.cpp\
         Widget.cpp \

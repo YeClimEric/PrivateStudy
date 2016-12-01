@@ -31,6 +31,9 @@
    </property>
    <item row="0" column="0">
     <widget class="QWebView" name="webView">
+     <property name="locale">
+      <locale language="Chinese" country="China"/>
+     </property>
      <property name="url">
       <url>
        <string>about:blank</string>
