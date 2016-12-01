@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui webkit webkitwidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -15,11 +15,14 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        Widget.cpp
+        Widget.cpp \
+    Components/Browser/CWebViewWidget.cpp
 
-HEADERS  += Widget.h
+HEADERS  += Widget.h \
+    Components/Browser/CWebViewWidget.h
 
-FORMS    += Widget.ui
+FORMS    += Widget.ui \
+    Components/Browser/CWebViewWidget.ui
 
 RESOURCES += \
     Resource/Skins.qrc
