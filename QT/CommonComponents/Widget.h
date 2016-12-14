@@ -2,6 +2,7 @@
 #define WIDGET_H
 
 #include <QWidget>
+#include "Examples/CExample_WebView.h"
 
 namespace Ui {
 class Widget;
@@ -18,11 +19,16 @@ public:
 private:
     void LoadStyleSheet(QString sSuffix="");
 
+private slots:
+    void sl_WebViewExample();
+
 private:
     Ui::Widget *ui;
     QApplication& m_App;
 
     QString m_sRccFile;
+
+    CExample_WebView* m_pWebViewWidget;
 };
 
 #endif // WIDGET_H

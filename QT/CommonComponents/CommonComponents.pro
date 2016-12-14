@@ -14,16 +14,22 @@ TARGET = CommonComponents
 TEMPLATE = app
 
 INCLUDEPATH += QtNetwork QtWebKitWidgets
+INCLUDEPATH += .\Components\Browser \
+               .\Examples
 
 SOURCES += main.cpp\
         Widget.cpp \
-    Components/Browser/CWebViewWidget.cpp
+    Components/Browser/CustomWebPage.cpp \
+    Components/Browser/CustomWebView.cpp \
+    Examples/CExample_WebView.cpp
 
 HEADERS  += Widget.h \
-    Components/Browser/CWebViewWidget.h
+    Components/Browser/CustomWebPage.h \
+    Components/Browser/CustomWebView.h \
+    Components/Browser/IWebViewHelper.h \
+    Examples/CExample_WebView.h
 
 FORMS    += Widget.ui \
-    Components/Browser/CWebViewWidget.ui
 
 RESOURCES += \
     Resource/Skins.qrc

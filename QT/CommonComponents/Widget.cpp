@@ -7,16 +7,20 @@
 #include <QDebug>
 #include <QComboBox>
 
+#include <QStringList>
+#include <QFileDialog>
+
 
 Widget::Widget(QApplication& app, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Widget),
-    m_App(app)
+    m_App(app),
+    m_pWebViewWidget(new CExample_WebView())
 {
     m_sRccFile = QApplication::applicationDirPath() + QString("/Resource/Skins.rcc");
     if(!QFile::exists(m_sRccFile))
     {
-        QMessageBox::information(this,"Information","no rcc file");
+        //QMessageBox::information(this,"Information","no rcc file");
     }
     QResource::registerResource(m_sRccFile);
     LoadStyleSheet();
@@ -31,6 +35,12 @@ Widget::Widget(QApplication& app, QWidget *parent) :
     connect(ui->SkinComBox, &QComboBox::currentTextChanged,[&](QString s){
         LoadStyleSheet(s);
     });
+
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
+    connect(ui->webviewExp, &QPushButton::clicked, this, &Widget::sl_WebViewExample);
+#else
+    connect(ui->webviewExp, SIGNAL(clicked(),this, SLOT(sl_WebViewExample());
+#endif
 }
 
 Widget::~Widget()
@@ -63,4 +73,13 @@ void Widget::LoadStyleSheet(QString sSuffix)
         QMessageBox::information(this,"information","open file failed");
     }
     loFile.close();
+}
+
+void Widget::sl_WebViewExample()
+{
+    if(m_pWebViewWidget != nullptr){
+        qDebug()<<"Load...";
+        m_pWebViewWidget->LoadUrl("http://www.qxiu.com/");
+        m_pWebViewWidget->show();
+    }
 }

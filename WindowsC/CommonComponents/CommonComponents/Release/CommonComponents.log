@@ -1,0 +1,7 @@
+﻿  CustomWebView.cpp
+IEWidget\CustomWebView.cpp(45): error C2039: “storageLocation”: 不是“QDesktopServices”的成员
+  d:\qt\qt5.3.2\5.3\msvc2010_opengl\include\qtgui\qdesktopservices.h(58): note: 参见“QDesktopServices”的声明
+IEWidget\CustomWebView.cpp(45): error C2039: “CacheLocation”: 不是“QDesktopServices”的成员
+  d:\qt\qt5.3.2\5.3\msvc2010_opengl\include\qtgui\qdesktopservices.h(58): note: 参见“QDesktopServices”的声明
+IEWidget\CustomWebView.cpp(45): error C2065: “CacheLocation”: 未声明的标识符
+IEWidget\CustomWebView.cpp(45): error C3861: “storageLocation”: 找不到标识符
