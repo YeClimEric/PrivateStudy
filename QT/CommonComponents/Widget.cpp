@@ -79,7 +79,7 @@ void Widget::sl_WebViewExample()
 {
     if(m_pWebViewWidget != nullptr){
         qDebug()<<"Load...";
-        m_pWebViewWidget->LoadUrl("http://www.qxiu.com/");
+        m_pWebViewWidget->LoadUrl("http://client.qxiu.com/hall/hall.html?");
         m_pWebViewWidget->show();
     }
 }

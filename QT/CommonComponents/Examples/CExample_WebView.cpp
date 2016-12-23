@@ -5,7 +5,7 @@ CExample_WebView::CExample_WebView(QWidget *parent) :
     QWidget(parent)
 {
     m_pWebview = new CCustomWebView(this);
-    m_pWebview->setFixedSize(1024,768);
+    m_pWebview->setFixedSize(1366,768);
 }
 
 void CExample_WebView::LoadUrl(const QString &url)
