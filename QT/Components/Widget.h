@@ -4,11 +4,14 @@
 #include <QWidget>
 #include "Label/CQLabel.h"
 
+#include "Web/IWebViewInterface.h"
+#include "Web/CQWebView.h"
+
 namespace Ui {
 class Widget;
 }
 
-class Widget : public QWidget
+class Widget : public QWidget, public IWebViewNavigator
 {
     Q_OBJECT
 
@@ -17,7 +20,11 @@ public:
     ~Widget();
 
 private:
+    virtual bool Navigate(const QUrl& url);
+
+private:
     Ui::Widget *ui;
+    CQWebView* m_pWebview;
 };
 
 #endif // WIDGET_H
